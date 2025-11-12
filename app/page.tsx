@@ -66,13 +66,13 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="/devenir-partenaire"
+              href="/#contact"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#E31E24] rounded-lg shadow-lg"
             >
               Ouvrir un compte pro
             </a>
             <a
-              href="/contact"
+              href="/#contact"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-[#FFD700] rounded-lg shadow-lg"
             >
               Recevoir la grille tarifaire
@@ -413,7 +413,7 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <a
-                href="/devenir-partenaire"
+                href="/#contact"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#E31E24] rounded-lg shadow-lg transform hover:scale-105 transition-transform"
               >
                 Ouvrir un compte pro
@@ -454,7 +454,9 @@ export default function HomePage() {
       </section>
 
       {/* Formulaire de contact avec upload Kbis */}
-      <ContactForm />
+      <div id="contact">
+        <ContactForm />
+      </div>
     </main>
   );
 }

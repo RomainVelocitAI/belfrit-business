@@ -70,7 +70,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/nos-gammes" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/catalogue" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   Nos gammes
                 </Link>
               </li>
@@ -80,12 +80,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/devenir-partenaire" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/#contact" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   Devenir partenaire
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/#contact" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   Contact
                 </Link>
               </li>
@@ -112,7 +112,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/cgv" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/cgu" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   CGV
                 </Link>
               </li>

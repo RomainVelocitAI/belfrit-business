@@ -45,7 +45,7 @@ export function Header() {
               Qui sommes-nous
             </Link>
             <Link
-              href="/devenir-partenaire"
+              href="/#contact"
               className="px-6 py-2 bg-primary-red text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
             >
               Devenir partenaire
@@ -92,7 +92,7 @@ export function Header() {
                 Qui sommes-nous
               </Link>
               <Link
-                href="/devenir-partenaire"
+                href="/#contact"
                 className="px-6 py-2 bg-primary-red text-white font-semibold rounded-lg hover:bg-red-700 transition-colors text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >

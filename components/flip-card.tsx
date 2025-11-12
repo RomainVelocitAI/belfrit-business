@@ -25,6 +25,7 @@ export const FlipCard = React.forwardRef<HTMLDivElement, FlipCardProps>(
   ({ imageSrc, imageAlt = "Feature image", title, description, buttonText, backContent, className, parallaxSpeed = 0 }, ref) => {
     const [isFlipped, setIsFlipped] = React.useState(false);
     const cardRef = React.useRef<HTMLDivElement>(null);
+    const uniqueId = React.useId();
 
     // Hook de parallax
     const { scrollYProgress } = useScroll({
@@ -42,24 +43,38 @@ export const FlipCard = React.forwardRef<HTMLDivElement, FlipCardProps>(
       [parallaxSpeed * -100, parallaxSpeed * 100]
     );
 
+    const handleFlip = React.useCallback((e: React.MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Flip clicked!', uniqueId);
+      setIsFlipped(true);
+    }, [uniqueId]);
+
+    const handleUnflip = React.useCallback((e: React.MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Unflip clicked!', uniqueId);
+      setIsFlipped(false);
+    }, [uniqueId]);
+
     return (
       <motion.div
         ref={cardRef}
         style={{ y: parallaxSpeed > 0 ? y : 0 }}
         className={cn(
-          "relative w-full max-w-lg h-[580px] perspective-1000",
+          "relative w-full max-w-lg h-[580px] perspective-1000 pointer-events-none",
           className
         )}
       >
         <div
           className={cn(
-            "relative w-full h-full transition-transform duration-700 transform-style-3d",
+            "relative w-full h-full transition-transform duration-700 transform-style-3d pointer-events-none",
             isFlipped ? "rotate-y-180" : ""
           )}
         >
           {/* Face avant */}
-          <div className="absolute w-full h-full backface-hidden">
-            <div className="relative h-full rounded-2xl border bg-white/90 backdrop-blur-sm p-8 text-center shadow-lg hover:shadow-xl transition-all duration-500">
+          <div className="absolute w-full h-full backface-hidden pointer-events-none">
+            <div className="relative h-full rounded-2xl border bg-white/90 backdrop-blur-sm p-8 text-center shadow-lg hover:shadow-xl transition-all duration-500 pointer-events-none">
               {/* Background glow effect */}
               <div className="absolute left-1/2 top-0 -z-10 h-2/3 w-2/3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-gold/10 blur-3xl" />
 
@@ -85,11 +100,12 @@ export const FlipCard = React.forwardRef<HTMLDivElement, FlipCardProps>(
               </p>
 
               {/* Button Section - positionné en absolu par rapport au conteneur */}
-              <div className="absolute bottom-8 left-0 right-0 text-center">
+              <div className="absolute bottom-8 left-0 right-0 text-center z-50 pointer-events-auto">
                 <Button
+                  type="button"
                   size="lg"
-                  onClick={() => setIsFlipped(true)}
-                  className="bg-[#E31E24] text-white hover:bg-[#E31E24] mx-auto"
+                  onClick={handleFlip}
+                  className="bg-[#E31E24] text-white hover:bg-[#E31E24] mx-auto pointer-events-auto cursor-pointer"
                 >
                   {buttonText}
                 </Button>
@@ -98,15 +114,16 @@ export const FlipCard = React.forwardRef<HTMLDivElement, FlipCardProps>(
           </div>
 
           {/* Face arrière */}
-          <div className="absolute w-full h-full backface-hidden rotate-y-180">
-            <div className="relative h-full rounded-2xl border bg-white/90 backdrop-blur-sm p-8 shadow-lg">
+          <div className="absolute w-full h-full backface-hidden rotate-y-180 pointer-events-none">
+            <div className="relative h-full rounded-2xl border bg-white/90 backdrop-blur-sm p-8 shadow-lg pointer-events-none">
               {/* Background glow effect */}
               <div className="absolute left-1/2 top-0 -z-10 h-2/3 w-2/3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-gold/10 blur-3xl" />
 
               {/* Bouton fermer */}
               <button
-                onClick={() => setIsFlipped(false)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                type="button"
+                onClick={handleUnflip}
+                className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors pointer-events-auto cursor-pointer z-50"
                 aria-label="Fermer"
               >
                 <X className="w-6 h-6 text-gray-900" />
@@ -129,11 +146,12 @@ export const FlipCard = React.forwardRef<HTMLDivElement, FlipCardProps>(
               </div>
 
               {/* Button Section - positionné en absolu par rapport au conteneur */}
-              <div className="absolute bottom-8 left-0 right-0 text-center">
+              <div className="absolute bottom-8 left-0 right-0 text-center z-50 pointer-events-auto">
                 <Button
+                  type="button"
                   size="lg"
-                  onClick={() => setIsFlipped(false)}
-                  className="bg-[#E31E24] text-white hover:bg-[#E31E24] mx-auto"
+                  onClick={handleUnflip}
+                  className="bg-[#E31E24] text-white hover:bg-[#E31E24] mx-auto pointer-events-auto cursor-pointer"
                 >
                   Retour
                 </Button>
