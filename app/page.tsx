@@ -28,7 +28,7 @@ export default function HomePage() {
     {
       src: '/hero1.png',
       alt: 'Frites belges premium',
-      className: 'w-40 h-40 md:w-56 md:h-56 top-[12%] left-[50%] -translate-x-1/2 animate-float-slow'
+      className: 'w-32 h-32 md:w-44 md:h-44 top-[8%] left-[50%] -translate-x-1/2 animate-float-slow'
     },
     // Droite haut
     {
