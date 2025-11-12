@@ -2,6 +2,7 @@ import { FloatingFoodHero } from '@/components/hero-section-7';
 import { FlipCard } from '@/components/flip-card';
 import { GammesStagger } from '@/components/gammes-stagger';
 import PlvSection from '@/components/plv-section';
+import ContactForm from '@/components/contact-form';
 import { AnimatedTabs } from '@/components/ui/animated-tabs';
 import { Timeline3D, TimelineEvent } from '@/components/3d-interactive-timeline';
 import { Package, Truck, Award, ChefHat, Store, Building, Ship, Warehouse, MapPin } from 'lucide-react';
@@ -412,13 +413,13 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <a
                 href="/devenir-partenaire"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary-red hover:bg-red-700 transition-colors rounded-lg shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#E31E24] rounded-lg shadow-lg transform hover:scale-105 transition-transform"
               >
                 Ouvrir un compte pro
               </a>
               <a
                 href="/catalogue"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-primary-gold hover:bg-yellow-500 transition-colors rounded-lg shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-[#FFD700] rounded-lg shadow-lg transform hover:scale-105 transition-transform"
               >
                 Consulter le catalogue
               </a>
@@ -450,6 +451,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Formulaire de contact avec upload Kbis */}
+      <ContactForm />
     </main>
   );
 }
