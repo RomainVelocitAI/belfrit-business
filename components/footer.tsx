@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-white border-t border-gray-200">
       {/* Section principale */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -20,7 +20,7 @@ export default function Footer() {
                 className="object-contain"
               />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-600 text-sm leading-relaxed">
               Les vrais produits belges en B2B à La Réunion. Qualité constante, chaîne du froid maîtrisée, accompagnement point-de-vente.
             </p>
             <div className="flex gap-4">
@@ -28,7 +28,7 @@ export default function Footer() {
                 href="https://facebook.com/belfritbusiness"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 hover:bg-[#E31E24] rounded-full flex items-center justify-center transition-colors"
+                className="w-10 h-10 bg-gray-100 hover:bg-[#E31E24] text-gray-900 hover:text-white rounded-full flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -39,7 +39,7 @@ export default function Footer() {
                 href="https://instagram.com/belfritbusiness"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 hover:bg-[#E31E24] rounded-full flex items-center justify-center transition-colors"
+                className="w-10 h-10 bg-gray-100 hover:bg-[#E31E24] text-gray-900 hover:text-white rounded-full flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -50,7 +50,7 @@ export default function Footer() {
                 href="https://linkedin.com/company/belfritbusiness"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 hover:bg-[#E31E24] rounded-full flex items-center justify-center transition-colors"
+                className="w-10 h-10 bg-gray-100 hover:bg-[#E31E24] text-gray-900 hover:text-white rounded-full flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -65,27 +65,27 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6 text-[#FFD700]">Navigation</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   Accueil
                 </Link>
               </li>
               <li>
-                <Link href="/nos-gammes" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/nos-gammes" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   Nos gammes
                 </Link>
               </li>
               <li>
-                <Link href="/catalogue" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/catalogue" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   Catalogue
                 </Link>
               </li>
               <li>
-                <Link href="/devenir-partenaire" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/devenir-partenaire" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   Devenir partenaire
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/contact" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   Contact
                 </Link>
               </li>
@@ -97,22 +97,22 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6 text-[#FFD700]">Informations légales</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/mentions-legales" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/mentions-legales" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   Mentions légales
                 </Link>
               </li>
               <li>
-                <Link href="/politique-confidentialite" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/politique-confidentialite" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   Politique de confidentialité
                 </Link>
               </li>
               <li>
-                <Link href="/cgu" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/cgu" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   CGU
                 </Link>
               </li>
               <li>
-                <Link href="/cgv" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/cgv" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   CGV
                 </Link>
               </li>
@@ -125,19 +125,19 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#E31E24] flex-shrink-0 mt-0.5" />
-                <a href="tel:+262693659589" className="text-gray-400 hover:text-white transition-colors">
+                <a href="tel:+262693659589" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   +262 693 659 589
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#E31E24] flex-shrink-0 mt-0.5" />
-                <a href="mailto:info@belfritbusiness.fr" className="text-gray-400 hover:text-white transition-colors">
+                <a href="mailto:info@belfritbusiness.fr" className="text-gray-900 hover:text-[#E31E24] transition-colors">
                   info@belfritbusiness.fr
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#E31E24] flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">
+                <span className="text-gray-900">
                   La Réunion<br />
                   France
                 </span>
@@ -148,14 +148,14 @@ export default function Footer() {
       </div>
 
       {/* Barre inférieure */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-gray-200">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-900">
             <p>
               &copy; {new Date().getFullYear()} BelFrit Business. Tous droits réservés.
             </p>
             <p>
-              Directeur de publication : <span className="text-white font-medium">Angelo Rapazzini</span>
+              Directeur de publication : <span className="font-medium">Angelo Rapazzini</span>
             </p>
             <p className="flex items-center gap-2">
               <span className="inline-block w-6 h-4 bg-black"></span>
