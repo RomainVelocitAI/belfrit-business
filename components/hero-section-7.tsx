@@ -16,13 +16,13 @@ interface FloatingImageProps {
 
 /**
  * @typedef FloatingFoodHeroProps
- * @property {string} title - The main heading text.
+ * @property {string | React.ReactNode} title - The main heading text or React node.
  * @property {string} description - The paragraph text below the heading.
  * @property {FloatingImageProps[]} images - An array of image objects to be displayed.
  * @property {string} [className] - Optional additional classes for the section container.
  */
 export interface FloatingFoodHeroProps {
-  title: string;
+  title: string | React.ReactNode;
   description: string;
   images: FloatingImageProps[];
   className?: string;
@@ -80,7 +80,7 @@ export function FloatingFoodHero({
   return (
     <section
       className={cn(
-        'relative w-full min-h-[60vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-background py-20 md:py-32',
+        'relative w-full min-h-[60vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden py-20 md:py-32',
         className
       )}
     >
@@ -113,7 +113,7 @@ export function FloatingFoodHero({
         <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl">
           {title}
         </h1>
-        <p className="mt-6 text-lg leading-8 text-muted-foreground">
+        <p className="mt-6 text-lg leading-8 text-gray-900">
           {description}
         </p>
       </div>

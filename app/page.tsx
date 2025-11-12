@@ -1,35 +1,42 @@
 import { FloatingFoodHero } from '@/components/hero-section-7';
-import { FeatureHighlightCard } from '@/components/feature-highlight-card';
+import { FlipCard } from '@/components/flip-card';
+import { GammesStagger } from '@/components/gammes-stagger';
 import { Package, Truck, Award, ChefHat, Store, Building } from 'lucide-react';
 import Image from 'next/image';
 
 export default function HomePage() {
   // Configuration des images flottantes pour le hero
+  // 2 à gauche, 2 à droite, 1 au centre au-dessus du texte
   const heroImages = [
-    {
-      src: '/hero1.png',
-      alt: 'Frites belges premium',
-      className: 'w-32 h-32 md:w-48 md:h-48 top-[10%] left-[5%] animate-float'
-    },
-    {
-      src: '/hero2.png',
-      alt: 'Frites dorées',
-      className: 'w-40 h-40 md:w-56 md:h-56 top-[15%] right-[8%] animate-float-delayed'
-    },
+    // Gauche haut
     {
       src: '/hero3.png',
       alt: 'Frites croustillantes',
-      className: 'w-36 h-36 md:w-52 md:h-52 bottom-[20%] left-[10%] animate-float-slow'
+      className: 'w-32 h-32 md:w-48 md:h-48 top-[15%] left-[5%] animate-float'
     },
+    // Gauche bas
+    {
+      src: '/hero2.png',
+      alt: 'Frites dorées',
+      className: 'w-36 h-36 md:w-52 md:h-52 bottom-[25%] left-[8%] animate-float-delayed'
+    },
+    // Centre au-dessus du texte
+    {
+      src: '/hero1.png',
+      alt: 'Frites belges premium',
+      className: 'w-40 h-40 md:w-56 md:h-56 top-[8%] left-[50%] -translate-x-1/2 animate-float-slow'
+    },
+    // Droite haut
     {
       src: '/hero4.png',
       alt: 'Snacks belges',
-      className: 'w-32 h-32 md:w-44 md:h-44 bottom-[25%] right-[12%] animate-float'
+      className: 'w-32 h-32 md:w-44 md:h-44 top-[20%] right-[5%] animate-float'
     },
+    // Droite bas
     {
       src: '/hero5.png',
       alt: 'Produits premium',
-      className: 'w-28 h-28 md:w-40 md:h-40 top-[40%] right-[3%] animate-float-delayed'
+      className: 'w-28 h-28 md:w-40 md:h-40 bottom-[30%] right-[8%] animate-float-delayed'
     }
   ];
 
@@ -37,10 +44,16 @@ export default function HomePage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <FloatingFoodHero
-        title="Les vraies frites belges, en B2B à La Réunion."
+        title={
+          <>
+            <span className="text-[#000000]">Les vraies frites </span>
+            <span className="text-[#FFD700]">belges</span>
+            <span className="text-[#E31E24]">, en B2B à La Réunion.</span>
+          </>
+        }
         description="Qualité constante, chaîne du froid maîtrisée, accompagnement point-de-vente."
         images={heroImages}
-        className="bg-white"
+        className="bg-transparent"
       />
 
       {/* CTAs sous le hero */}
@@ -49,52 +62,85 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="/devenir-partenaire"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary-red hover:bg-red-700 transition-colors rounded-lg shadow-lg"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#E31E24] rounded-lg shadow-lg"
             >
               Ouvrir un compte pro
             </a>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-primary-gold hover:bg-yellow-500 transition-colors rounded-lg shadow-lg"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-[#FFD700] rounded-lg shadow-lg"
             >
               Recevoir la grille tarifaire
             </a>
           </div>
-          <p className="text-center mt-6 text-sm text-gray-600">
+          <p className="text-center mt-6 text-sm text-gray-900">
             Réservé aux professionnels. Validation SIRET requise.
           </p>
         </div>
       </section>
 
       {/* Preuves clés */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
             {/* Carte 1 - Produits certifiés */}
-            <FeatureHighlightCard
+            <FlipCard
+              parallaxSpeed={0}
               imageSrc="/card-produits.jpg"
               imageAlt="Produits certifiés Belgique"
               title="Produits certifiés"
               description="Approvisionnement direct Belgique, traçabilité totale, conformité réglementaire Réunion"
               buttonText="En savoir plus"
+              backContent={{
+                title: "Produits certifiés",
+                details: [
+                  "Partenariats directs avec producteurs belges historiques",
+                  "Traçabilité complète de la pomme de terre à l'assiette",
+                  "Certifications sanitaires EU et conformité DROM",
+                  "Contrôles qualité à chaque étape de la chaîne",
+                  "Labels garantissant l'origine et la méthode de fabrication"
+                ]
+              }}
             />
 
             {/* Carte 2 - Logistique maîtrisée */}
-            <FeatureHighlightCard
+            <FlipCard
+              parallaxSpeed={1}
               imageSrc="/card-logistique.jpg"
               imageAlt="Logistique maîtrisée"
               title="Logistique maîtrisée"
               description="Livraisons régulières, chaîne du froid ininterrompue, gestion des ruptures de stock"
               buttonText="En savoir plus"
+              backContent={{
+                title: "Logistique maîtrisée",
+                details: [
+                  "Conteneurs réfrigérés -18°C du port de Liège à La Réunion",
+                  "Rotations maritimes mensuelles garantissant stock constant",
+                  "Entrepôt frigorifique local certifié avec backup électrique",
+                  "Livraisons programmées selon vos besoins opérationnels",
+                  "Système d'alerte préventif sur ruptures potentielles"
+                ]
+              }}
             />
 
             {/* Carte 3 - Accompagnement pro */}
-            <FeatureHighlightCard
+            <FlipCard
+              parallaxSpeed={2}
               imageSrc="/card-accompagnement.jpg"
               imageAlt="Accompagnement professionnel"
               title="Accompagnement pro"
               description="PLV fournie, fiches techniques, formations cuisson, recettes exclusives"
               buttonText="En savoir plus"
+              backContent={{
+                title: "Accompagnement pro",
+                details: [
+                  "Kit PLV complet : affiches, chevalets, stickers origine Belgique",
+                  "Fiches techniques détaillées : temps/température de cuisson optimaux",
+                  "Formation sur site : maîtrise de la friteuse professionnelle",
+                  "Recettes exclusives développées par chefs belges",
+                  "Support commercial continu et conseil merchandising"
+                ]
+              }}
             />
           </div>
         </div>
@@ -104,7 +150,7 @@ export default function HomePage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 frites-bars pb-3 inline-block">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 belgium-bars pb-3 inline-block">
               Nos gammes premium
             </h2>
             <p className="text-xl text-gray-600">
@@ -112,79 +158,15 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {/* Frites surgelées */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-square bg-gradient-to-br from-primary-gold/20 to-primary-red/10 flex items-center justify-center p-8">
-                <div className="text-6xl">🍟</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Frites surgelées</h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Classiques, ondulées, steakhouse, rustiques
-                </p>
-                <a href="/catalogue#frites" className="text-primary-red hover:underline font-semibold">
-                  Voir la gamme →
-                </a>
-              </div>
-            </div>
-
-            {/* Snacks belges */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-square bg-gradient-to-br from-primary-gold/20 to-primary-red/10 flex items-center justify-center p-8">
-                <div className="text-6xl">🧆</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Snacks belges</h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Bitterballen, croquettes, fricadelles
-                </p>
-                <a href="/catalogue#snacks" className="text-primary-red hover:underline font-semibold">
-                  Voir la gamme →
-                </a>
-              </div>
-            </div>
-
-            {/* Sauces premium */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-square bg-gradient-to-br from-primary-gold/20 to-primary-red/10 flex items-center justify-center p-8">
-                <div className="text-6xl">🥫</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Sauces premium</h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Andalouse, samouraï, américaine, tartare
-                </p>
-                <a href="/catalogue#sauces" className="text-primary-red hover:underline font-semibold">
-                  Voir la gamme →
-                </a>
-              </div>
-            </div>
-
-            {/* Accompagnements */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-square bg-gradient-to-br from-primary-gold/20 to-primary-red/10 flex items-center justify-center p-8">
-                <div className="text-6xl">🥗</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Accompagnements</h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Salades, oignons frits, fromages belges
-                </p>
-                <a href="/catalogue#accompagnements" className="text-primary-red hover:underline font-semibold">
-                  Voir la gamme →
-                </a>
-              </div>
-            </div>
-          </div>
+          <GammesStagger />
         </div>
       </section>
 
       {/* Segments servis */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 frites-bars pb-3 inline-block">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 belgium-bars pb-3 inline-block">
               Qui servons-nous ?
             </h2>
             <p className="text-xl text-gray-600">
@@ -194,7 +176,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Restauration */}
-            <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-red/10 mb-6">
                 <ChefHat className="w-8 h-8 text-primary-red" />
               </div>
@@ -213,7 +195,7 @@ export default function HomePage() {
             </div>
 
             {/* Distribution */}
-            <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-red/10 mb-6">
                 <Store className="w-8 h-8 text-primary-red" />
               </div>
@@ -232,7 +214,7 @@ export default function HomePage() {
             </div>
 
             {/* Collectivités */}
-            <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-red/10 mb-6">
                 <Building className="w-8 h-8 text-primary-red" />
               </div>
@@ -258,7 +240,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 frites-bars pb-3 inline-block">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 belgium-bars pb-3 inline-block">
                 Logistique & qualité
               </h2>
               <p className="text-xl text-gray-600">
@@ -317,7 +299,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-primary-gold/10 to-primary-red/5 rounded-lg p-8">
+              <div className="bg-gradient-to-br from-primary-gold/20 to-primary-red/20 backdrop-blur-sm rounded-lg p-8">
                 <h3 className="text-2xl font-bold mb-6">Nos engagements qualité</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
@@ -348,11 +330,11 @@ export default function HomePage() {
       </section>
 
       {/* PLV & accompagnement */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 frites-bars pb-3 inline-block">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 belgium-bars pb-3 inline-block">
                 PLV & accompagnement
               </h2>
               <p className="text-xl text-gray-600">
@@ -361,7 +343,7 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white rounded-lg p-8 shadow-lg">
+              <div className="bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg">
                 <h3 className="text-2xl font-bold mb-6 text-primary-red">Supports visuels</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li>• Affiches publicitaires aux couleurs BelFrit</li>
@@ -372,7 +354,7 @@ export default function HomePage() {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-lg p-8 shadow-lg">
+              <div className="bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg">
                 <h3 className="text-2xl font-bold mb-6 text-primary-red">Formation & recettes</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li>• Fiches techniques détaillées par produit</li>
