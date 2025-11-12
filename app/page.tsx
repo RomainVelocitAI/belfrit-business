@@ -10,25 +10,31 @@ import Image from 'next/image';
 
 export default function HomePage() {
   // Configuration des images flottantes pour le hero
-  // 2 à gauche, 2 à droite, plus d'image centrale pour éviter la superposition
+  // 2 à gauche, 2 à droite, 1 au centre visible sous le header
   const heroImages = [
     // Gauche haut
     {
       src: '/hero3.png',
       alt: 'Frites croustillantes',
-      className: 'w-32 h-32 md:w-48 md:h-48 top-[5%] left-[5%] animate-float'
+      className: 'w-32 h-32 md:w-48 md:h-48 top-[15%] left-[5%] animate-float'
     },
     // Gauche bas
     {
       src: '/hero2.png',
       alt: 'Frites dorées',
-      className: 'w-36 h-36 md:w-52 md:h-52 bottom-[15%] left-[8%] animate-float-delayed'
+      className: 'w-36 h-36 md:w-52 md:h-52 bottom-[25%] left-[8%] animate-float-delayed'
+    },
+    // Centre sous le header, au-dessus du texte
+    {
+      src: '/hero1.png',
+      alt: 'Frites belges premium',
+      className: 'w-40 h-40 md:w-56 md:h-56 top-[12%] left-[50%] -translate-x-1/2 animate-float-slow'
     },
     // Droite haut
     {
       src: '/hero4.png',
       alt: 'Snacks belges',
-      className: 'w-32 h-32 md:w-44 md:h-44 top-[5%] right-[5%] animate-float'
+      className: 'w-32 h-32 md:w-44 md:h-44 top-[20%] right-[5%] animate-float'
     },
     // Droite bas
     {
