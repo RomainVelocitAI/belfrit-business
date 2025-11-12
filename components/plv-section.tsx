@@ -16,7 +16,7 @@ export default function PlvSection() {
       borderSize: 100,
       isHovered: false,
       title: "Affiches premium",
-      badgeColor: "belgium",
+      badgeColor: "belgium" as const,
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ export default function PlvSection() {
       borderSize: 100,
       isHovered: false,
       title: "Ardoises & chevalets",
-      badgeColor: "belgium",
+      badgeColor: "belgium" as const,
     },
     {
       id: 3,
@@ -44,7 +44,7 @@ export default function PlvSection() {
       borderSize: 100,
       isHovered: false,
       title: "Matériel PLV",
-      badgeColor: "belgium",
+      badgeColor: "belgium" as const,
     },
     {
       id: 4,
@@ -58,7 +58,7 @@ export default function PlvSection() {
       borderSize: 100,
       isHovered: false,
       title: "Recettes exclusives",
-      badgeColor: "reunion",
+      badgeColor: "reunion" as const,
     },
     {
       id: 5,
@@ -72,7 +72,7 @@ export default function PlvSection() {
       borderSize: 100,
       isHovered: false,
       title: "Fiches techniques",
-      badgeColor: "reunion",
+      badgeColor: "reunion" as const,
     },
     {
       id: 6,
@@ -86,7 +86,7 @@ export default function PlvSection() {
       borderSize: 100,
       isHovered: false,
       title: "Kit formation",
-      badgeColor: "reunion",
+      badgeColor: "reunion" as const,
     },
   ];
 
