@@ -9,6 +9,7 @@ const SQRT_5000 = Math.sqrt(5000);
 const products = [
   {
     tempId: 0,
+    id: 0, // ID fixe pour les couleurs du drapeau belge
     name: "Frites belges surgelées",
     description: "La frite traditionnelle belge dans toute son authenticité",
     details: "Classiques, ondulées, steakhouse, rustiques",
@@ -16,6 +17,7 @@ const products = [
   },
   {
     tempId: 1,
+    id: 1, // ID fixe pour les couleurs du drapeau belge
     name: "Croquettes de fromage",
     description: "Boulettes panées au fromage fondant, croustillantes à souhait",
     details: "Parfaites en apéritif ou accompagnement",
@@ -23,6 +25,7 @@ const products = [
   },
   {
     tempId: 2,
+    id: 2, // ID fixe pour les couleurs du drapeau belge
     name: "Fricadelle Mix",
     description: "L'assortiment de snacks frits typiquement belges",
     details: "Variété de fricadelles et boulettes panées",
@@ -30,6 +33,7 @@ const products = [
   },
   {
     tempId: 3,
+    id: 3, // ID fixe pour les couleurs du drapeau belge
     name: "Mini Snacks",
     description: "Petites boulettes panées croustillantes et savoureuses",
     details: "Idéales pour toutes les occasions",
@@ -37,6 +41,7 @@ const products = [
   },
   {
     tempId: 4,
+    id: 4, // ID fixe pour les couleurs du drapeau belge
     name: "Röstis",
     description: "Galettes de pommes de terre dorées et croustillantes",
     details: "La spécialité suisse adoptée par la Belgique",
@@ -59,18 +64,28 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const isCenter = position === 0;
 
+  // Belgian flag colors: black, yellow, red (alternating pattern)
+  const belgiumColors = ['#000000', '#FFD700', '#E31E24'];
+  const colorIndex = product.id % 3; // Utilise l'ID fixe au lieu de tempId
+  const cardColor = belgiumColors[colorIndex];
+
+  // Determine if we should use light text (for black cards)
+  const isBlackCard = colorIndex === 0;
+
   return (
     <div
       onClick={() => handleMove(position)}
       className={cn(
         "absolute left-1/2 top-1/2 cursor-pointer border-2 p-8 transition-all duration-500 ease-in-out overflow-hidden",
         isCenter
-          ? "z-10 bg-white border-primary-red shadow-lg"
-          : "z-0 bg-white/95 border-gray-300 hover:border-primary-red/50"
+          ? "z-10 shadow-lg"
+          : "z-0 hover:border-primary-red/50"
       )}
       style={{
         width: cardSize,
         height: cardSize,
+        backgroundColor: cardColor,
+        borderColor: isCenter ? cardColor : 'rgba(209, 213, 219, 0.3)',
         clipPath: `polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)`,
         transform: `
           translate(-50%, -50%)
@@ -78,16 +93,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
           translateY(${isCenter ? -65 : position % 2 ? 15 : -15}px)
           rotate(${isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)
         `,
-        boxShadow: isCenter ? "0px 8px 0px 4px rgba(227, 30, 36, 0.2)" : "0px 0px 0px 0px transparent"
+        boxShadow: isCenter ? `0px 8px 0px 4px ${cardColor}40` : "0px 0px 0px 0px transparent"
       }}
     >
       <span
-        className="absolute block origin-top-right rotate-45 bg-primary-red/30"
+        className="absolute block origin-top-right rotate-45"
         style={{
           right: -2,
           top: 48,
           width: SQRT_5000,
-          height: 2
+          height: 2,
+          backgroundColor: isBlackCard ? 'rgba(255, 215, 0, 0.3)' : 'rgba(0, 0, 0, 0.1)'
         }}
       />
       <img
@@ -95,24 +111,25 @@ const ProductCard: React.FC<ProductCardProps> = ({
         alt={product.name}
         className="mb-6 h-64 w-full object-contain"
         style={{
-          boxShadow: isCenter ? "3px 3px 0px rgba(0, 0, 0, 0.1)" : "none"
+          boxShadow: isCenter ? "3px 3px 0px rgba(0, 0, 0, 0.1)" : "none",
+          filter: isBlackCard ? 'brightness(1.1)' : 'none'
         }}
       />
       <h3 className={cn(
         "text-xl sm:text-2xl font-bold mb-3",
-        isCenter ? "text-gray-900" : "text-gray-700"
+        isBlackCard ? "text-white" : "text-gray-900"
       )}>
         {product.name}
       </h3>
       <p className={cn(
         "text-sm mb-2",
-        isCenter ? "text-gray-700" : "text-gray-600"
+        isBlackCard ? "text-gray-200" : "text-gray-700"
       )}>
         {product.description}
       </p>
       <p className={cn(
-        "absolute bottom-10 left-8 right-8 text-xs italic",
-        isCenter ? "text-primary-red font-semibold" : "text-gray-500"
+        "absolute bottom-10 left-8 right-8 text-xs italic font-semibold",
+        isBlackCard ? "text-yellow-400" : colorIndex === 1 ? "text-red-600" : "text-yellow-600"
       )}>
         {product.details}
       </p>
