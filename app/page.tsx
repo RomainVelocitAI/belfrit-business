@@ -1,7 +1,10 @@
 import { FloatingFoodHero } from '@/components/hero-section-7';
 import { FlipCard } from '@/components/flip-card';
 import { GammesStagger } from '@/components/gammes-stagger';
-import { Package, Truck, Award, ChefHat, Store, Building } from 'lucide-react';
+import PlvSection from '@/components/plv-section';
+import { AnimatedTabs } from '@/components/ui/animated-tabs';
+import { Timeline3D, TimelineEvent } from '@/components/3d-interactive-timeline';
+import { Package, Truck, Award, ChefHat, Store, Building, Ship, Warehouse, MapPin } from 'lucide-react';
 import Image from 'next/image';
 
 export default function HomePage() {
@@ -174,155 +177,218 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Restauration */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-red/10 mb-6">
-                <ChefHat className="w-8 h-8 text-primary-red" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Restauration</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Restaurants traditionnels</li>
-                <li>• Fast-food et snacks</li>
-                <li>• Food-trucks</li>
-                <li>• Restaurants d'hôtels</li>
-              </ul>
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <p className="text-sm font-semibold text-primary-red">
-                  Fiches techniques et formations cuisson incluses
-                </p>
-              </div>
-            </div>
-
-            {/* Distribution */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-red/10 mb-6">
-                <Store className="w-8 h-8 text-primary-red" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Distribution</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Supérettes et épiceries</li>
-                <li>• Stations-service</li>
-                <li>• Cafétérias d'entreprise</li>
-                <li>• Points de vente isolés</li>
-              </ul>
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <p className="text-sm font-semibold text-primary-red">
-                  PLV et support merchandising fournis
-                </p>
-              </div>
-            </div>
-
-            {/* Collectivités */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-red/10 mb-6">
-                <Building className="w-8 h-8 text-primary-red" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Collectivités</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Cantines scolaires</li>
-                <li>• Restaurants d'entreprise</li>
-                <li>• Établissements de santé</li>
-                <li>• Centres de loisirs</li>
-              </ul>
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <p className="text-sm font-semibold text-primary-red">
-                  Volumes adaptés et facturation simplifiée
-                </p>
-              </div>
-            </div>
+          <div className="flex justify-center">
+            <AnimatedTabs
+              className="max-w-4xl"
+              tabs={[
+                {
+                  id: "restauration",
+                  label: "Restauration",
+                  color: "#003DA5",
+                  content: (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                      <div className="relative h-64 rounded-lg overflow-hidden">
+                        <Image
+                          src="/segment-restauration.jpg"
+                          alt="Restaurant professionnel"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-4">
+                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20">
+                          <ChefHat className="w-8 h-8 text-white" />
+                        </div>
+                        <h3 className="text-2xl font-bold text-white">Restauration</h3>
+                        <ul className="space-y-2 text-white">
+                          <li>• Restaurants traditionnels</li>
+                          <li>• Fast-food et snacks</li>
+                          <li>• Food-trucks</li>
+                          <li>• Restaurants d'hôtels</li>
+                        </ul>
+                        <div className="mt-auto pt-4 border-t border-white/30">
+                          <p className="text-sm font-semibold text-white">
+                            Fiches techniques et formations cuisson incluses
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ),
+                },
+                {
+                  id: "distribution",
+                  label: "Distribution",
+                  color: "#FFD700",
+                  content: (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                      <div className="relative h-64 rounded-lg overflow-hidden">
+                        <Image
+                          src="/segment-distribution.jpg"
+                          alt="Point de vente"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-4">
+                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-900/20">
+                          <Store className="w-8 h-8 text-gray-900" />
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900">Distribution</h3>
+                        <ul className="space-y-2 text-gray-900">
+                          <li>• Supérettes et épiceries</li>
+                          <li>• Stations-service</li>
+                          <li>• Cafétérias d'entreprise</li>
+                          <li>• Points de vente isolés</li>
+                        </ul>
+                        <div className="mt-auto pt-4 border-t border-gray-900/30">
+                          <p className="text-sm font-semibold text-gray-900">
+                            PLV et support merchandising fournis
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ),
+                },
+                {
+                  id: "collectivites",
+                  label: "Collectivites",
+                  color: "#ED1C24",
+                  content: (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                      <div className="relative h-64 rounded-lg overflow-hidden">
+                        <Image
+                          src="/segment-collectivites.jpg"
+                          alt="Restauration collective"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-4">
+                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20">
+                          <Building className="w-8 h-8 text-white" />
+                        </div>
+                        <h3 className="text-2xl font-bold text-white">Collectivites</h3>
+                        <ul className="space-y-2 text-white">
+                          <li>• Cantines scolaires</li>
+                          <li>• Restaurants d'entreprise</li>
+                          <li>• Etablissements de sante</li>
+                          <li>• Centres de loisirs</li>
+                        </ul>
+                        <div className="mt-auto pt-4 border-t border-white/30">
+                          <p className="text-sm font-semibold text-white">
+                            Volumes adaptes et facturation simplifiee
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ),
+                },
+              ]}
+            />
           </div>
         </div>
       </section>
 
       {/* Logistique & qualité */}
-      <section className="py-20">
+      <section className="py-20 bg-transparent">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 belgium-bars pb-3 inline-block">
                 Logistique & qualité
               </h2>
-              <p className="text-xl text-gray-600">
-                Une chaîne du froid irréprochable de la Belgique à votre cuisine
+              <p className="text-2xl md:text-3xl font-semibold text-gray-700 mt-6 mb-8">
+                Froid maîtrisé, livraisons planifiées, traçabilité claire
+              </p>
+              <p className="text-lg text-gray-900 max-w-3xl mx-auto leading-relaxed">
+                De l'entrepôt belge à votre cuisine, chaque étape est contrôlée. Notre système de
+                stockage frigorifique à La Réunion, nos tournées planifiées et notre suivi numérique
+                des DLC garantissent une fraîcheur optimale. Vous vous concentrez sur la cuisine,
+                nous gérons la logistique.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary-gold/20 flex items-center justify-center font-bold text-primary-red">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">Import direct</h3>
-                    <p className="text-gray-600">
-                      Sélection des meilleurs producteurs belges, contrôle qualité strict à la source
-                    </p>
-                  </div>
-                </div>
+            <Timeline3D
+              events={[
+                {
+                  id: "import",
+                  date: "Etape 1",
+                  title: "Import direct Belgique",
+                  description: "Sélection des meilleurs producteurs belges avec contrôle qualité strict à la source. Partenariats directs garantissant l'authenticité et la traçabilité complète de chaque produit.",
+                  icon: <Package className="w-5 h-5 text-white" />,
+                  image: "/timeline-import.jpg",
+                  category: "ORIGINE",
+                  color: "black"
+                },
+                {
+                  id: "transport",
+                  date: "Etape 2",
+                  title: "Transport maritime sécurisé",
+                  description: "Conteneurs réfrigérés maintenant -18°C à -22°C durant tout le trajet. Suivi GPS en temps réel et respect strict des normes HACCP pour une chaîne du froid irréprochable.",
+                  icon: <Ship className="w-5 h-5 text-white" />,
+                  image: "/timeline-transport.jpg",
+                  category: "TRANSIT",
+                  color: "yellow"
+                },
+                {
+                  id: "stockage",
+                  date: "Etape 3",
+                  title: "Stockage frigorifique optimisé",
+                  description: "Entrepôt certifié à La Réunion avec gestion informatisée des stocks. Système de backup électrique et monitoring 24/7 pour garantir la conservation optimale des produits.",
+                  icon: <Warehouse className="w-5 h-5 text-white" />,
+                  image: "/timeline-stockage.jpg",
+                  category: "STOCKAGE",
+                  color: "red"
+                },
+                {
+                  id: "livraison",
+                  date: "Etape 4",
+                  title: "Livraison express sur mesure",
+                  description: "Camions frigorifiques avec livraisons programmées selon vos besoins. Garantie de fraîcheur jusqu'à votre cuisine et système d'alerte préventif sur les ruptures potentielles.",
+                  icon: <Truck className="w-5 h-5 text-white" />,
+                  image: "/timeline-livraison.jpg",
+                  category: "DISTRIBUTION",
+                  color: "blue"
+                }
+              ] as TimelineEvent[]}
+              backgroundColor="bg-transparent"
+              primaryColor="bg-[#E31E24]"
+              secondaryColor="bg-[#FFD700]"
+              textColor="text-gray-900"
+              accentColor="bg-[#FFD700]"
+              showImages={true}
+              className="!py-12"
+            />
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary-gold/20 flex items-center justify-center font-bold text-primary-red">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">Transport sécurisé</h3>
-                    <p className="text-gray-600">
-                      Conteneurs réfrigérés maritimes, suivi GPS en temps réel, respect des normes HACCP
-                    </p>
-                  </div>
+            <div className="mt-16 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-[#E31E24] hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-[#E31E24] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Truck className="w-8 h-8 text-white" />
                 </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary-gold/20 flex items-center justify-center font-bold text-primary-red">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">Stockage optimisé</h3>
-                    <p className="text-gray-600">
-                      Entrepôt frigorifique certifié à La Réunion, gestion informatisée des stocks
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary-gold/20 flex items-center justify-center font-bold text-primary-red">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">Livraison express</h3>
-                    <p className="text-gray-600">
-                      Camions frigorifiques, livraisons programmées, garantie de fraîcheur jusqu'à vous
-                    </p>
-                  </div>
-                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Tournées planifiées</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Optimisation des livraisons selon vos besoins réels, réduction des coûts de transport
+                </p>
               </div>
 
-              <div className="bg-gradient-to-br from-primary-gold/20 to-primary-red/20 backdrop-blur-sm rounded-lg p-8">
-                <h3 className="text-2xl font-bold mb-6">Nos engagements qualité</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary-gold text-xl flex-shrink-0">✓</span>
-                    <span>Traçabilité complète du producteur belge au client final</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary-gold text-xl flex-shrink-0">✓</span>
-                    <span>Température maintenue entre -18°C et -22°C en permanence</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary-gold text-xl flex-shrink-0">✓</span>
-                    <span>Contrôles qualité à chaque étape de la chaîne logistique</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary-gold text-xl flex-shrink-0">✓</span>
-                    <span>Conformité totale aux normes sanitaires de La Réunion</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary-gold text-xl flex-shrink-0">✓</span>
-                    <span>Service client dédié et réactif pour toute question</span>
-                  </li>
-                </ul>
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-[#FFD700] hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-[#FFD700] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Package className="w-8 h-8 text-gray-900" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Traçabilité & DLC</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Suivi numérique complet, alertes automatiques pour une gestion sans perte
+                </p>
+              </div>
+
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-black hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Ship className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Support mise en place</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Accompagnement personnalisé pour optimiser votre organisation et vos commandes
+                </p>
               </div>
             </div>
           </div>
@@ -330,57 +396,7 @@ export default function HomePage() {
       </section>
 
       {/* PLV & accompagnement */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 belgium-bars pb-3 inline-block">
-                PLV & accompagnement
-              </h2>
-              <p className="text-xl text-gray-600">
-                On ne vous livre pas que des produits, on vous aide à les vendre
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg">
-                <h3 className="text-2xl font-bold mb-6 text-primary-red">Supports visuels</h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li>• Affiches publicitaires aux couleurs BelFrit</li>
-                  <li>• Ardoises et stop-trottoir personnalisables</li>
-                  <li>• Chevalets de table et menus formats A4/A5</li>
-                  <li>• Stickers vitrine et habillage de point de vente</li>
-                  <li>• Présentoirs comptoir pour snacks</li>
-                </ul>
-              </div>
-
-              <div className="bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg">
-                <h3 className="text-2xl font-bold mb-6 text-primary-red">Formation & recettes</h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li>• Fiches techniques détaillées par produit</li>
-                  <li>• Temps et températures de cuisson optimaux</li>
-                  <li>• 20+ recettes exclusives créées par notre chef</li>
-                  <li>• Formations cuisson sur site (sur demande)</li>
-                  <li>• Hotline technique 7j/7 pour vos questions</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-primary-red to-red-700 text-white rounded-lg p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4">Pack PLV offert dès 500€ HT de commande</h3>
-              <p className="text-lg mb-6 opacity-90">
-                Valorisez vos frites belges avec nos supports marketing professionnels
-              </p>
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold bg-primary-gold text-gray-900 hover:bg-yellow-500 transition-colors rounded-lg"
-              >
-                Demander mon pack PLV
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PlvSection />
 
       {/* Bandeau conversion final */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
