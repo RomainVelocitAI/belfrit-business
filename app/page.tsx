@@ -404,7 +404,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Prêt à proposer les <span className="gold-underline">vraies frites belges</span> à vos clients ?
+              Prêt à proposer les <span className="gold-underline">vrais produits belges</span> à vos clients ?
             </h2>
             <p className="text-xl mb-8 text-gray-300">
               Ouvrez votre compte professionnel en 48h et recevez votre première commande sous 7 jours
