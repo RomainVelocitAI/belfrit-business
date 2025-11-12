@@ -20,12 +20,14 @@ interface FloatingImageProps {
  * @property {string} description - The paragraph text below the heading.
  * @property {FloatingImageProps[]} images - An array of image objects to be displayed.
  * @property {string} [className] - Optional additional classes for the section container.
+ * @property {string} [logoSrc] - Optional logo image to display below description.
  */
 export interface FloatingFoodHeroProps {
   title: string | React.ReactNode;
   description: string;
   images: FloatingImageProps[];
   className?: string;
+  logoSrc?: string;
 }
 
 /**
@@ -76,6 +78,7 @@ export function FloatingFoodHero({
   description,
   images,
   className,
+  logoSrc,
 }: FloatingFoodHeroProps) {
   return (
     <section
@@ -116,6 +119,17 @@ export function FloatingFoodHero({
         <p className="mt-6 text-lg leading-8 text-gray-900">
           {description}
         </p>
+        {logoSrc && (
+          <div className="mt-8 flex justify-center">
+            <Image
+              src={logoSrc}
+              alt="Logo"
+              width={200}
+              height={200}
+              className="object-contain"
+            />
+          </div>
+        )}
       </div>
     </section>
   );

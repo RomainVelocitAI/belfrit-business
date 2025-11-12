@@ -58,6 +58,7 @@ export default function HomePage() {
         description="Qualité constante, chaîne du froid maîtrisée, accompagnement point-de-vente."
         images={heroImages}
         className="bg-transparent"
+        logoSrc="/1.png"
       />
 
       {/* CTAs sous le hero */}
@@ -407,7 +408,7 @@ export default function HomePage() {
               Prêt à proposer les <span className="gold-underline">vrais produits belges</span> à vos clients ?
             </h2>
             <p className="text-xl mb-8 text-gray-300">
-              Ouvrez votre compte professionnel en 48h et recevez votre première commande sous 7 jours
+              Ouvrez votre compte professionnel en 48h et recevez votre première commande
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
