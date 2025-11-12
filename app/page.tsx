@@ -315,7 +315,7 @@ export default function HomePage() {
                   id: "import",
                   date: "Etape 1",
                   title: "Import direct Belgique",
-                  description: "Sélection des meilleurs producteurs belges avec contrôle qualité strict à la source. Partenariats directs garantissant l'authenticité et la traçabilité complète de chaque produit.",
+                  description: "Sélection des meilleurs fournisseurs belges avec contrôle qualité strict à la source. Partenariats directs garantissant l'authenticité et la traçabilité complète de chaque produit.",
                   icon: <Package className="w-5 h-5 text-white" />,
                   image: "/timeline-import.jpg",
                   category: "ORIGINE",
