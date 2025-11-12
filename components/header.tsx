@@ -22,7 +22,6 @@ export function Header() {
               className="h-24 w-24"
               priority
             />
-            <span className="text-4xl font-bold text-primary-red">Belfrit</span>
           </Link>
 
           {/* Navigation Desktop */}
