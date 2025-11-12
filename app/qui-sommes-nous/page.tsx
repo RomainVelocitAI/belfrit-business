@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { FloatingFoodHero } from '@/components/hero-section-7';
 import { Timeline3D, TimelineEvent } from '@/components/3d-interactive-timeline';
 import { BentoGrid, BentoGridItem } from '@/components/bento-grid';
@@ -90,14 +91,14 @@ export default function QuiSommesNousPage() {
           description="BelFrit-Business distribue des frites, snacks et sauces belges premium pour professionnels a La Reunion. Notre exigence : qualite constante, chaine du froid maitrisee et accompagnement point-de-vente."
           images={[
             {
-              src: '/hero-frites-1.png',
+              src: '/gamme-frites.png',
               alt: 'Frites belges premium',
               className:
                 'left-[10%] top-[20%] w-32 h-32 md:w-48 md:h-48 animate-float-slow opacity-80',
             },
             {
-              src: '/hero-frites-2.png',
-              alt: 'Snacks belges',
+              src: '/gamme-fricadelle.png',
+              alt: 'Fricadelles belges',
               className:
                 'right-[10%] top-[30%] w-28 h-28 md:w-40 md:h-40 animate-float-medium opacity-70',
             },
@@ -108,16 +109,22 @@ export default function QuiSommesNousPage() {
                 'left-[50%] top-[10%] w-36 h-36 md:w-48 md:h-48 -translate-x-1/2',
             },
             {
-              src: '/hero-frites-3.png',
-              alt: 'Sauces belges',
+              src: '/gamme-croquettes.png',
+              alt: 'Croquettes belges',
               className:
                 'left-[15%] bottom-[20%] w-24 h-24 md:w-36 md:h-36 animate-float-fast opacity-60',
             },
             {
-              src: '/hero-frites-4.png',
-              alt: 'Produits belges',
+              src: '/gamme-mini-snacks.png',
+              alt: 'Mini snacks belges',
               className:
                 'right-[15%] bottom-[25%] w-32 h-32 md:w-44 md:h-44 animate-float-slow opacity-75',
+            },
+            {
+              src: '/gamme-rostis.png',
+              alt: 'Rostis belges',
+              className:
+                'left-[30%] bottom-[15%] w-28 h-28 md:w-40 md:h-40 animate-float opacity-65',
             },
           ]}
           className="bg-transparent min-h-[60vh]"
@@ -189,11 +196,11 @@ export default function QuiSommesNousPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3 text-gray-900">
               Nos valeurs
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#FFD700]"></span>
             </h2>
-            <p className="text-xl text-gray-600 mt-6">
+            <p className="text-xl text-gray-900 mt-6">
               4 piliers qui guident notre action quotidienne
             </p>
           </div>
@@ -203,8 +210,15 @@ export default function QuiSommesNousPage() {
               title="Authenticite"
               description="Produits belges soigneusement selectionnes, gout reconnaissable."
               header={
-                <div className="flex h-full min-h-[6rem] items-center justify-center bg-gradient-to-br from-[#000000] to-[#FFD700] rounded-md">
-                  <Award className="w-16 h-16 text-[#FFD700]" />
+                <div className="relative w-full h-[280px] rounded-md overflow-hidden">
+                  <Image
+                    src="/valeur-confiance.png"
+                    alt="Authenticite - Produits belges"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               }
               className="md:col-span-2 md:row-span-1"
@@ -213,8 +227,15 @@ export default function QuiSommesNousPage() {
               title="Qualite"
               description="Constance produit et procedures de preparation claires."
               header={
-                <div className="flex h-full min-h-[6rem] items-center justify-center bg-gradient-to-br from-[#E31E24] to-[#FF6B6B] rounded-md">
-                  <CheckCircle className="w-16 h-16 text-white" />
+                <div className="relative w-full h-[280px] rounded-md overflow-hidden">
+                  <Image
+                    src="/valeur-qualite.png"
+                    alt="Qualite - Standards eleves"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               }
               className="md:col-span-1 md:row-span-1"
@@ -223,8 +244,14 @@ export default function QuiSommesNousPage() {
               title="Service"
               description="Support PDV (PLV, recettes, scripts de vente)."
               header={
-                <div className="flex h-full min-h-[6rem] items-center justify-center bg-gradient-to-br from-[#003DA5] to-[#0052D9] rounded-md">
-                  <Headphones className="w-16 h-16 text-white" />
+                <div className="relative w-full h-[240px] rounded-md overflow-hidden">
+                  <Image
+                    src="/valeur-service.png"
+                    alt="Service - Accompagnement pro"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
               }
               className="md:col-span-1 md:row-span-1"
@@ -233,8 +260,14 @@ export default function QuiSommesNousPage() {
               title="Performance"
               description="Mise en avant, rotation, satisfaction et reachat."
               header={
-                <div className="flex h-full min-h-[6rem] items-center justify-center bg-gradient-to-br from-[#FFD700] to-[#FFA500] rounded-md">
-                  <TrendingUp className="w-16 h-16 text-gray-900" />
+                <div className="relative w-full h-[240px] rounded-md overflow-hidden">
+                  <Image
+                    src="/valeur-equipe.png"
+                    alt="Performance - Resultats mesurables"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
                 </div>
               }
               className="md:col-span-2 md:row-span-1"
@@ -247,11 +280,11 @@ export default function QuiSommesNousPage() {
       <section className="py-20 bg-transparent">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3 text-gray-900">
               Notre methode
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#FFD700]"></span>
             </h2>
-            <p className="text-2xl md:text-3xl font-semibold text-gray-700 mt-6 mb-8">
+            <p className="text-2xl md:text-3xl font-semibold text-gray-900 mt-6 mb-8">
               4 etapes pour un partenariat reussi
             </p>
           </div>
@@ -281,11 +314,11 @@ export default function QuiSommesNousPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3 text-gray-900">
               Nos engagements qualite
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#FFD700]"></span>
             </h2>
-            <p className="text-xl text-gray-600 mt-6">
+            <p className="text-xl text-gray-900 mt-6">
               Des garanties concretes pour votre activite
             </p>
           </div>
@@ -378,11 +411,11 @@ export default function QuiSommesNousPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3 text-gray-900">
               Notre equipe
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#FFD700]"></span>
             </h2>
-            <p className="text-xl text-gray-600 mt-6">
+            <p className="text-xl text-gray-900 mt-6">
               Des experts dedies a votre reussite
             </p>
           </div>
