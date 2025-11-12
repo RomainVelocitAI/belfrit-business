@@ -50,7 +50,7 @@ export default function HomePage() {
       <FloatingFoodHero
         title={
           <>
-            <span className="text-[#000000]">Les vraies frites </span>
+            <span className="text-[#000000]">Les vrais produits </span>
             <span className="text-[#FFD700]">belges</span>
             <span className="text-[#E31E24]">, en B2B à La Réunion.</span>
           </>
