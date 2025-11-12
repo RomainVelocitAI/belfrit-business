@@ -80,20 +80,23 @@ export function FloatingFoodHero({
   className,
   logoSrc,
 }: FloatingFoodHeroProps) {
+  const centerImage = images.find(img => img.className.includes('left-[50%]'));
+  const sideImages = images.filter(img => !img.className.includes('left-[50%]'));
+
   return (
     <section
       className={cn(
-        'relative w-full min-h-[60vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden py-20 md:py-32',
+        'relative w-full min-h-[60vh] lg:min-h-[80vh] flex flex-col items-center justify-center overflow-hidden py-12 md:py-20',
         className
       )}
     >
       <div className="absolute inset-0 z-0">
         <Swirls />
       </div>
-      
-      {/* Render floating images */}
+
+      {/* Render side floating images (gauche et droite) */}
       <div className="absolute inset-0 z-10">
-        {images.map((image, index) => (
+        {sideImages.map((image, index) => (
           <div
             key={index}
             className={cn('absolute', image.className)}
@@ -111,7 +114,21 @@ export function FloatingFoodHero({
         ))}
       </div>
 
-      {/* Text Content */}
+      {/* Image centrale - ENTRE header et titre */}
+      {centerImage && (
+        <div className="relative z-30 mb-8 mt-8">
+          <Image
+            src={centerImage.src}
+            alt={centerImage.alt}
+            width={150}
+            height={150}
+            className="object-contain animate-float-slow"
+            unoptimized
+          />
+        </div>
+      )}
+
+      {/* Text Content - EN DESSOUS de l'image centrale */}
       <div className="relative z-20 container mx-auto px-4 text-center max-w-2xl">
         <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl">
           {title}
