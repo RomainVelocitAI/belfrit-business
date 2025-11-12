@@ -83,7 +83,7 @@ export function FloatingFoodHero({
   return (
     <section
       className={cn(
-        'relative w-full min-h-[60vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden py-12 md:py-20',
+        'relative w-full min-h-[60vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden py-20 md:py-32',
         className
       )}
     >
@@ -120,7 +120,7 @@ export function FloatingFoodHero({
           {description}
         </p>
         {logoSrc && (
-          <div className="mt-8 flex justify-center">
+          <div className="mt-16 mb-8 flex justify-center">
             <Image
               src={logoSrc}
               alt="Logo"
