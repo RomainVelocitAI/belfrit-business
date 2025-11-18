@@ -290,7 +290,7 @@ export default function QuiSommesNousPage() {
           </div>
 
           <Timeline3D
-            events={méthodeEvents}
+            events={methodeEvents}
             backgroundColor="bg-transparent"
             primaryColor="bg-[#E31E24]"
             secondaryColor="bg-[#FFD700]"
