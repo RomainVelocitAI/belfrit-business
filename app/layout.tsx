@@ -16,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className="scroll-smooth">
+      <head>
+        <meta charSet="utf-8" />
+      </head>
       <body className="antialiased">
         <Header />
         <DevBanner />
