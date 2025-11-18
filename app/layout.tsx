@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/header";
+import { DevBanner } from "@/components/dev-banner";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
@@ -17,7 +18,8 @@ export default function RootLayout({
     <html lang="fr" className="scroll-smooth">
       <body className="antialiased">
         <Header />
-        <div className="pt-40">
+        <DevBanner />
+        <div className="pt-52">
           {children}
         </div>
         <Footer />
