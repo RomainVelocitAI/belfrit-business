@@ -34,45 +34,45 @@ export default function QuiSommesNousPage() {
   const methodeEvents: TimelineEvent[] = [
     {
       id: 'audit',
-      date: 'Etape 1',
+      date: 'Étape 1',
       title: 'Audit',
       description:
-        "Contexte, flux, objectifs, contraintes d'espace et de debit. Analyse de votre point de vente pour identifier les meilleures opportunites.",
+        "Contexte, flux, objectifs, contraintes d'espace et de débit. Analyse de votre point de vente pour identifier les meilleures opportunités.",
       icon: <Search className="w-5 h-5 text-white" />,
-      image: '/methode-audit.jpg',
+      image: '/méthode-audit.jpg',
       category: 'DIAGNOSTIC',
       color: 'black',
     },
     {
       id: 'selection',
-      date: 'Etape 2',
-      title: 'Selection',
+      date: 'Étape 2',
+      title: 'Sélection',
       description:
-        'References adaptees (frites, snacks, sauces) et conseil cuisson. Choix des produits optimaux selon votre segment et votre debit.',
+        'Références adaptées (frites, snacks, sauces) et conseil cuisson. Choix des produits optimaux selon votre segment et votre débit.',
       icon: <ClipboardCheck className="w-5 h-5 text-white" />,
-      image: '/methode-selection.jpg',
+      image: '/méthode-selection.jpg',
       category: 'CHOIX',
       color: 'yellow',
     },
     {
       id: 'mise-en-place',
-      date: 'Etape 3',
+      date: 'Étape 3',
       title: 'Mise en place & PLV',
       description:
-        "Affiches, stickers, chevalets, contenus reseaux. Pack complet de supports pour valoriser l'offre belge en point de vente.",
+        "Affiches, stickers, chevalets, contenus réseaux. Pack complet de supports pour valoriser l'offre belge en point de vente.",
       icon: <Palette className="w-5 h-5 text-white" />,
-      image: '/methode-plv.jpg',
+      image: '/méthode-plv.jpg',
       category: 'DEPLOYMENT',
       color: 'red',
     },
     {
       id: 'suivi',
-      date: 'Etape 4',
+      date: 'Étape 4',
       title: 'Suivi',
       description:
-        "Approvisionnement planifie, tracabilite/DLC, ajustements d'assortiment. Accompagnement continu pour optimiser vos ventes.",
+        "Approvisionnement planifié, traçabilité/DLC, ajustements d'assortiment. Accompagnement continu pour optimiser vos ventes.",
       icon: <BarChart className="w-5 h-5 text-white" />,
-      image: '/methode-suivi.jpg',
+      image: '/méthode-suivi.jpg',
       category: 'PERFORMANCE',
       color: 'blue',
     },
@@ -88,7 +88,7 @@ export default function QuiSommesNousPage() {
               <span className="text-[#000000]">Qui sommes-nous</span>
             </>
           }
-          description="BelFrit-Business distribue des frites, snacks et sauces belges premium pour professionnels a La Reunion. Notre exigence : qualite constante, chaine du froid maitrisee et accompagnement point-de-vente."
+          description="BelFrit-Business distribue des frites, snacks et sauces belges premium pour professionnels à La Réunion. Notre exigence : qualité constante, chaîne du froid maîtrisée et accompagnement point-de-vente."
           images={[
             {
               src: '/gamme-frites.png',
@@ -137,18 +137,18 @@ export default function QuiSommesNousPage() {
               href="/#contact"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#E31E24] rounded-lg shadow-lg transform hover:scale-105 transition-transform"
             >
-              Echanger avec un specialiste
+              Échanger avec un spécialiste
             </a>
             <a
               href="/#contact"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-[#FFD700] rounded-lg shadow-lg transform hover:scale-105 transition-transform"
             >
               <Phone className="w-5 h-5 mr-2" />
-              Etre rappele par un conseiller
+              Être rappelé par un conseiller
             </a>
           </div>
           <p className="text-center text-sm text-gray-600 italic">
-            Reserve aux professionnels. Validation SIRET requise.
+            Réservé aux professionnels. Validation SIRET requise.
           </p>
         </div>
       </section>
@@ -166,9 +166,9 @@ export default function QuiSommesNousPage() {
                   Notre mission
                 </h2>
                 <p className="text-xl text-gray-700 leading-relaxed">
-                  Apporter l'authenticite belge aux acteurs du snacking et de
-                  la restauration a La Reunion, avec une execution simple,
-                  fiable et rentable cote point de vente.
+                  Apporter l'authenticité belge aux acteurs du snacking et de
+                  la restauration à La Réunion, avec une exécution simple,
+                  fiable et rentable côté point de vente.
                 </p>
               </div>
             </div>
@@ -182,8 +182,8 @@ export default function QuiSommesNousPage() {
                   Notre promesse
                 </h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Qualite constante, livraisons planifiees en chaine du froid,
-                  et un veritable support commercial en magasin (PLV, recettes,
+                  Qualité constante, livraisons planifiées en chaîne du froid,
+                  et un véritable support commercial en magasin (PLV, recettes,
                   conseils cuisson).
                 </p>
               </div>
@@ -207,13 +207,13 @@ export default function QuiSommesNousPage() {
 
           <BentoGrid className="max-w-6xl mx-auto">
             <BentoGridItem
-              title="Authenticite"
-              description="Produits belges soigneusement selectionnes, gout reconnaissable."
+              title="Authenticité"
+              description="Produits belges soigneusement sélectionnés, goût reconnaissable."
               header={
                 <div className="relative w-full h-[280px] rounded-md overflow-hidden">
                   <Image
                     src="/valeur-confiance.png"
-                    alt="Authenticite - Produits belges"
+                    alt="Authenticité - Produits belges"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
@@ -224,13 +224,13 @@ export default function QuiSommesNousPage() {
               className="md:col-span-2 md:row-span-1"
             />
             <BentoGridItem
-              title="Qualite"
-              description="Constance produit et procedures de preparation claires."
+              title="Qualité"
+              description="Constance produit et procédures de préparation claires."
               header={
                 <div className="relative w-full h-[280px] rounded-md overflow-hidden">
                   <Image
-                    src="/valeur-qualite.png"
-                    alt="Qualite - Standards eleves"
+                    src="/valeur-qualité.png"
+                    alt="Qualité - Standards élevés"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
@@ -258,12 +258,12 @@ export default function QuiSommesNousPage() {
             />
             <BentoGridItem
               title="Performance"
-              description="Mise en avant, rotation, satisfaction et reachat."
+              description="Mise en avant, rotation, satisfaction et réachat."
               header={
                 <div className="relative w-full h-[240px] rounded-md overflow-hidden">
                   <Image
-                    src="/valeur-equipe.png"
-                    alt="Performance - Resultats mesurables"
+                    src="/valeur-équipe.png"
+                    alt="Performance - Résultats mesurables"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
@@ -281,16 +281,16 @@ export default function QuiSommesNousPage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3 text-gray-900">
-              Notre methode
+              Notre méthode
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#FFD700]"></span>
             </h2>
             <p className="text-2xl md:text-3xl font-semibold text-gray-900 mt-6 mb-8">
-              4 etapes pour un partenariat reussi
+              4 étapes pour un partenariat réussi
             </p>
           </div>
 
           <Timeline3D
-            events={methodeEvents}
+            events={méthodeEvents}
             backgroundColor="bg-transparent"
             primaryColor="bg-[#E31E24]"
             secondaryColor="bg-[#FFD700]"
@@ -303,8 +303,8 @@ export default function QuiSommesNousPage() {
           <div className="mt-12 text-center max-w-2xl mx-auto">
             <p className="text-gray-600 italic bg-gray-50 p-4 rounded-lg border-l-4 border-[#FFD700]">
               <strong>Note pratique :</strong> Protocole cuisson 2 bains
-              documente (option premium a la graisse de canard IGP sur friteuse
-              dediee si souhaite).
+              documenté (option premium à la graisse de canard IGP sur friteuse
+              dédiée si souhaité).
             </p>
           </div>
         </div>
@@ -315,11 +315,11 @@ export default function QuiSommesNousPage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3 text-gray-900">
-              Nos engagements qualite
+              Nos engagements qualité
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#FFD700]"></span>
             </h2>
             <p className="text-xl text-gray-900 mt-6">
-              Des garanties concretes pour votre activite
+              Des garanties concrètes pour votre activité
             </p>
           </div>
 
@@ -327,18 +327,18 @@ export default function QuiSommesNousPage() {
             <FlipCard
               imageSrc="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=800&q=80"
               imageAlt="Chaîne du froid"
-              title="Chaine du froid -20°C"
-              description="Maitrise totale de la temperature de la Belgique a votre cuisine"
+              title="Chaîne du froid -20°C"
+              description="Maîtrise totale de la température de la Belgique à votre cuisine"
               buttonText="En savoir plus"
               backContent={{
                 title: "Notre protocole froid",
                 details: [
-                  "Stockage professionnel a -20°C constant",
-                  "Preparation en chambre froide surveillee",
-                  "Livraisons planifiees avec vehicules frigorifiques",
-                  "Traçabilite temperature du depart jusqu'a reception",
-                  "Verification systematique a la livraison",
-                  "Formation equipes sur bonnes pratiques"
+                  "Stockage professionnel à -20°C constant",
+                  "Préparation en chambre froide surveillée",
+                  "Livraisons planifiées avec véhicules frigorifiques",
+                  "Traçabilité température du départ jusqu'à réception",
+                  "Vérification systématique à la livraison",
+                  "Formation équipes sur bonnes pratiques"
                 ]
               }}
               parallaxSpeed={0.5}
@@ -347,18 +347,18 @@ export default function QuiSommesNousPage() {
             <FlipCard
               imageSrc="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
               imageAlt="Traçabilité"
-              title="Tracabilite & DLC"
-              description="Suivi rigoureux des lots et documentation complete"
+              title="Traçabilité & DLC"
+              description="Suivi rigoureux des lots et documentation complète"
               buttonText="En savoir plus"
               backContent={{
-                title: "Systeme de tracabilite",
+                title: "Système de traçabilité",
                 details: [
-                  "Suivi des lots par numero unique",
+                  "Suivi des lots par numéro unique",
                   "Gestion FIFO (First In, First Out)",
-                  "Fiches techniques detaillees disponibles",
-                  "Tableau des allergenes sur demande",
-                  "Historique complet des receptions",
-                  "Acces espace pro apres validation compte"
+                  "Fiches techniques détaillées disponibles",
+                  "Tableau des allergènes sur demande",
+                  "Historique complet des réceptions",
+                  "Accès espace pro après validation compte"
                 ]
               }}
               parallaxSpeed={0.5}
@@ -377,8 +377,8 @@ export default function QuiSommesNousPage() {
                   "Fiches recettes et suggestions menu",
                   "Calendrier d'animation saisonnier",
                   "Conseils mise en avant vitrine",
-                  "Support marketing personnalise",
-                  "Formation equipe sur l'origine des produits"
+                  "Support marketing personnalisé",
+                  "Formation équipe sur l'origine des produits"
                 ]
               }}
               parallaxSpeed={0.5}
@@ -388,17 +388,17 @@ export default function QuiSommesNousPage() {
               imageSrc="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
               imageAlt="Transparence"
               title="Transparence pro"
-              description="Relations B2B claires et securisees"
+              description="Relations B2B claires et sécurisées"
               buttonText="En savoir plus"
               backContent={{
                 title: "Engagement transparence",
                 details: [
                   "Pas de tarifs publics (protection revendeurs)",
                   "Validation SIRET obligatoire",
-                  "Conditions tarifaires apres approbation compte",
-                  "Contrat cadre personnalise",
-                  "Engagement volumes negociable",
-                  "Relation commerciale long terme privilegiee"
+                  "Conditions tarifaires après approbation compte",
+                  "Contrat cadre personnalisé",
+                  "Engagement volumes négociable",
+                  "Relation commerciale long terme privilégiée"
                 ]
               }}
               parallaxSpeed={0.5}
@@ -412,23 +412,23 @@ export default function QuiSommesNousPage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3 text-gray-900">
-              Notre equipe
+              Notre équipe
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#FFD700]"></span>
             </h2>
             <p className="text-xl text-gray-900 mt-6">
-              Des experts dedies a votre reussite
+              Des experts dédiés à votre réussite
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <ThreeDCard
               title="Direction & Partenariats"
-              description="Strategie, sourcing, relations industrielles"
+              description="Stratégie, sourcing, relations industrielles"
               icon={<Building className="w-8 h-8 text-white" />}
               details={[
                 "Gestion partenariats producteurs belges",
                 "Coordination globale des operations",
-                "Strategie d'approvisionnement et qualite",
+                "Stratégie d'approvisionnement et qualité",
                 "Relations industrielles internationales"
               ]}
               className="bg-[#E31E24] border-2 border-[#FFD700]"
@@ -440,7 +440,7 @@ export default function QuiSommesNousPage() {
               icon={<Users className="w-8 h-8 text-white" />}
               details={[
                 "Qualification des professionnels",
-                "Propositions commerciales personnalisees",
+                "Propositions commerciales personnalisées",
                 "Suivi des comptes multi-sites",
                 "Accompagnement au long terme"
               ]}
@@ -448,13 +448,13 @@ export default function QuiSommesNousPage() {
             />
 
             <ThreeDCard
-              title="Qualite & Operations"
-              description="Logistique froid, tracabilite, conformite"
+              title="Qualité & Operations"
+              description="Logistique froid, traçabilité, conformité"
               icon={<Truck className="w-8 h-8 text-[#FFD700]" />}
               details={[
-                "Gestion de la chaine du froid",
-                "Tracabilite des lots et DLC",
-                "Conformite aux normes HACCP",
+                "Gestion de la chaîne du froid",
+                "Traçabilité des lots et DLC",
+                "Conformité aux normes HACCP",
                 "Coordination des livraisons"
               ]}
               className="bg-black border-2 border-[#FFD700]"
@@ -462,12 +462,12 @@ export default function QuiSommesNousPage() {
 
             <ThreeDCard
               title="Marketing & PLV"
-              description="Identite, supports PDV, contenus & formation courte"
+              description="Identité, supports PDV, contenus & formation courte"
               icon={<Palette className="w-8 h-8 text-[#E31E24]" />}
               details={[
-                "Creation de supports PLV personnalises",
+                "Création de supports PLV personnalisés",
                 "Fiches produits et recettes",
-                "Formation equipes sur produits belges",
+                "Formation équipes sur produits belges",
                 "Calendrier d'animation commercial"
               ]}
               className="bg-[#FFD700] border-2 border-[#E31E24] text-gray-900"
@@ -480,7 +480,7 @@ export default function QuiSommesNousPage() {
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#E31E24] rounded-lg shadow-lg hover:bg-[#C91A20] transform hover:scale-105 transition-all"
             >
               <Phone className="w-5 h-5 mr-2" />
-              Etre rappele par un conseiller
+              Être rappelé par un conseiller
             </a>
           </div>
         </div>
@@ -494,7 +494,7 @@ export default function QuiSommesNousPage() {
               Ils nous font confiance
             </h2>
             <p className="text-xl text-gray-300">
-              Temoignages et etudes de cas a venir
+              Témoignages et études de cas à venir
             </p>
           </div>
 
@@ -507,15 +507,15 @@ export default function QuiSommesNousPage() {
                 Prochainement
               </h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-8">
-                Decouvrez bientot les retours d'experience de nos partenaires
+                Découvrez bientôt les retours d'expérience de nos partenaires
                 professionnels : stations-service, restaurants, foodtrucks et
-                distributeurs qui ont choisi la qualite belge pour leur offre
+                distributeurs qui ont choisi la qualité belge pour leur offre
                 snacking.
               </p>
               <div className="flex flex-wrap gap-6 justify-center text-sm text-gray-400">
                 <div className="flex items-center gap-2">
                   <Star className="w-5 h-5 text-[#FFD700]" />
-                  <span>Etudes de cas avant/apres</span>
+                  <span>Études de cas avant/après</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <TrendingUp className="w-5 h-5 text-[#FFD700]" />
@@ -543,7 +543,7 @@ export default function QuiSommesNousPage() {
               </span>
             </h2>
             <p className="text-xl mb-8 text-gray-300">
-              Echangeons sur vos besoins specifiques et construisons ensemble
+              Échangeons sur vos besoins spécifiques et construisons ensemble
               votre offre frites et snacks belges premium
             </p>
 
@@ -552,7 +552,7 @@ export default function QuiSommesNousPage() {
                 href="/#contact"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#E31E24] rounded-lg shadow-lg transform hover:scale-105 transition-transform"
               >
-                Echanger avec un specialiste
+                Échanger avec un spécialiste
               </a>
               <a
                 href="/#contact"
@@ -569,7 +569,7 @@ export default function QuiSommesNousPage() {
                   ✓
                 </span>
                 <div>
-                  <p className="font-semibold mb-1">Audit personnalise</p>
+                  <p className="font-semibold mb-1">Audit personnalisé</p>
                   <p className="text-sm text-gray-400">
                     Analyse de votre point de vente
                   </p>
@@ -580,9 +580,9 @@ export default function QuiSommesNousPage() {
                   ✓
                 </span>
                 <div>
-                  <p className="font-semibold mb-1">Reponse sous 48h</p>
+                  <p className="font-semibold mb-1">Réponse sous 48h</p>
                   <p className="text-sm text-gray-400">
-                    Retour rapide apres qualification
+                    Retour rapide après qualification
                   </p>
                 </div>
               </div>
@@ -600,8 +600,8 @@ export default function QuiSommesNousPage() {
             </div>
 
             <p className="text-center mt-8 text-sm text-gray-400">
-              Offres et documents techniques reserves aux comptes
-              professionnels valides.
+              Offres et documents techniques réservés aux comptes
+              professionnels validés.
             </p>
           </div>
         </div>
