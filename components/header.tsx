@@ -46,7 +46,7 @@ export function Header() {
             </Link>
             <Link
               href="/#contact"
-              className="px-6 py-2 bg-primary-red text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
+              className="px-6 py-2 bg-[#E31E24] text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
             >
               Devenir partenaire
             </Link>
@@ -93,7 +93,7 @@ export function Header() {
               </Link>
               <Link
                 href="/#contact"
-                className="px-6 py-2 bg-primary-red text-white font-semibold rounded-lg hover:bg-red-700 transition-colors text-center"
+                className="px-6 py-2 bg-[#E31E24] text-white font-semibold rounded-lg hover:bg-red-700 transition-colors text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Devenir partenaire

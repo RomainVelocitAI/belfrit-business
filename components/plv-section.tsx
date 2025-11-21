@@ -7,7 +7,7 @@ export default function PlvSection() {
     {
       id: 1,
       image: "/plv-poster.jpg",
-      defaultPos: { x: 0, y: 0, w: 4, h: 4 },
+      defaultPos: { x: 0, y: 0, w: 6, h: 4 },
       corner: "",
       edgeHorizontal: "",
       edgeVertical: "",
@@ -21,7 +21,7 @@ export default function PlvSection() {
     {
       id: 2,
       image: "/plv-chalkboard.jpg",
-      defaultPos: { x: 4, y: 0, w: 4, h: 4 },
+      defaultPos: { x: 6, y: 0, w: 6, h: 4 },
       corner: "",
       edgeHorizontal: "",
       edgeVertical: "",
@@ -35,7 +35,7 @@ export default function PlvSection() {
     {
       id: 3,
       image: "/plv-supports.jpg",
-      defaultPos: { x: 8, y: 0, w: 4, h: 4 },
+      defaultPos: { x: 0, y: 4, w: 6, h: 4 },
       corner: "",
       edgeHorizontal: "",
       edgeVertical: "",
@@ -47,23 +47,9 @@ export default function PlvSection() {
       badgeColor: "belgium" as const,
     },
     {
-      id: 4,
-      image: "/formation-recipes.jpg",
-      defaultPos: { x: 0, y: 4, w: 4, h: 4 },
-      corner: "",
-      edgeHorizontal: "",
-      edgeVertical: "",
-      mediaSize: 1,
-      borderThickness: 0,
-      borderSize: 100,
-      isHovered: false,
-      title: "Recettes exclusives",
-      badgeColor: "reunion" as const,
-    },
-    {
       id: 5,
       image: "/formation-fiches.jpg",
-      defaultPos: { x: 4, y: 4, w: 4, h: 4 },
+      defaultPos: { x: 6, y: 4, w: 6, h: 4 },
       corner: "",
       edgeHorizontal: "",
       edgeVertical: "",
@@ -72,21 +58,7 @@ export default function PlvSection() {
       borderSize: 100,
       isHovered: false,
       title: "Fiches techniques",
-      badgeColor: "reunion" as const,
-    },
-    {
-      id: 6,
-      image: "/formation-kit.jpg",
-      defaultPos: { x: 8, y: 4, w: 4, h: 4 },
-      corner: "",
-      edgeHorizontal: "",
-      edgeVertical: "",
-      mediaSize: 1,
-      borderThickness: 0,
-      borderSize: 100,
-      isHovered: false,
-      title: "Kit formation",
-      badgeColor: "reunion" as const,
+      badgeColor: "belgium" as const,
     },
   ];
 
@@ -98,7 +70,7 @@ export default function PlvSection() {
             PLV & Accompagnement
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Des outils marketing professionnels et une formation complète pour valoriser
+            Des outils marketing professionnels pour valoriser
             vos produits belges et maitriser leur préparation.
           </p>
         </div>
@@ -111,7 +83,15 @@ export default function PlvSection() {
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-2">
                 <span className="text-[#FFD700] mt-1">●</span>
-                <span>Affiches publicitaires personnalisées</span>
+                <span>
+                  Affiches publicitaires
+                  <span className="relative inline-block group ml-1">
+                    <span className="text-[#FFD700] cursor-help">*</span>
+                    <span className="invisible group-hover:visible absolute left-0 top-6 w-64 bg-gray-900 text-white text-sm rounded-lg px-3 py-2 z-10 shadow-lg">
+                      Disponibilité selon les stocks et le volume de commande
+                    </span>
+                  </span>
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#FFD700] mt-1">●</span>
@@ -130,7 +110,7 @@ export default function PlvSection() {
 
           <div className="bg-white p-8 rounded-2xl shadow-lg">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Formation & recettes
+              Fiches & recettes
             </h3>
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-2">
@@ -139,11 +119,7 @@ export default function PlvSection() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#E31E24] mt-1">●</span>
-                <span>Recettes exclusives de la gastronomie belge</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#E31E24] mt-1">●</span>
-                <span>Formations cuisson et conseils de préparation</span>
+                <span>Fiches cuisson et conseils de préparation</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#E31E24] mt-1">●</span>

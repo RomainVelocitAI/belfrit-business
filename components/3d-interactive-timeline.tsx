@@ -126,16 +126,17 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
 
               const isEven = index % 2 === 0;
 
-              // Conversion des couleurs du drapeau belge + bleu
+              // Conversion des couleurs du drapeau belge + bleu + blanc
               const colorMap: { [key: string]: string } = {
                 'black': '#000000',
                 'yellow': '#FFD700',
                 'red': '#E31E24',
-                'blue': '#1E3A8A'
+                'blue': '#1E3A8A',
+                'white': '#FFFFFF'
               };
 
               const bgColor = event.color && colorMap[event.color] ? colorMap[event.color] : '#1e293b';
-              const textColorClass = event.color === 'yellow' ? 'text-gray-900' : 'text-white';
+              const textColorClass = (event.color === 'yellow' || event.color === 'white') ? 'text-gray-900' : 'text-white';
               const eventColor = event.color ? `bg-${event.color}-500` : primaryColor;
 
               return (
@@ -249,7 +250,7 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
 
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-4">
-                        <span className={`text-sm font-mono tracking-wider font-semibold ${event.color === 'yellow' ? 'text-gray-900' : 'text-white'}`}>
+                        <span className={`text-sm font-mono tracking-wider font-semibold ${(event.color === 'yellow' || event.color === 'white') ? 'text-gray-900' : 'text-white'}`}>
                           {event.date}
                         </span>
 
@@ -267,7 +268,7 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
                         />
                       </div>
 
-                      <h3 className={`text-2xl font-bold mb-2 ${event.color === 'yellow' ? 'text-gray-900' : 'text-white'}`}>{event.title}</h3>
+                      <h3 className={`text-2xl font-bold mb-2 ${(event.color === 'yellow' || event.color === 'white') ? 'text-gray-900' : 'text-white'}`}>{event.title}</h3>
 
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
@@ -278,7 +279,7 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <p className={`mt-3 leading-relaxed ${event.color === 'yellow' ? 'text-gray-800' : 'text-gray-100'}`}>
+                        <p className={`mt-3 leading-relaxed ${(event.color === 'yellow' || event.color === 'white') ? 'text-gray-800' : 'text-gray-100'}`}>
                           {event.description}
                         </p>
                         

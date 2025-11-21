@@ -197,10 +197,10 @@ export function DynamicFrameLayout({
   }
 
   const getColSizes = () => {
-    if (hovered === null) return "4fr 4fr 4fr"
+    if (hovered === null) return "6fr 6fr"
     const { col } = hovered
-    const nonHoveredSize = (12 - hoverSize) / 2
-    return [0, 1, 2].map((c) => (c === col ? `${hoverSize}fr` : `${nonHoveredSize}fr`)).join(" ")
+    const nonHoveredSize = 12 - hoverSize
+    return [0, 1].map((c) => (c === col ? `${hoverSize}fr` : `${nonHoveredSize}fr`)).join(" ")
   }
 
   const getTransformOrigin = (x: number, y: number) => {

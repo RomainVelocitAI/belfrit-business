@@ -72,6 +72,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
   // Determine if we should use light text (for black cards)
   const isBlackCard = colorIndex === 0;
 
+  // Taille réduite pour les cartes à l'arrière-plan
+  const displaySize = isCenter ? cardSize : cardSize * 0.75;
+
   return (
     <div
       onClick={() => handleMove(position)}
@@ -82,8 +85,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
           : "z-0 hover:border-primary-red/50"
       )}
       style={{
-        width: cardSize,
-        height: cardSize,
+        width: displaySize,
+        height: displaySize,
         backgroundColor: cardColor,
         borderColor: isCenter ? cardColor : 'rgba(209, 213, 219, 0.3)',
         clipPath: `polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)`,
@@ -115,22 +118,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
           filter: isBlackCard ? 'brightness(1.1)' : 'none'
         }}
       />
-      <h3 className={cn(
-        "text-xl sm:text-2xl font-bold mb-3",
-        isBlackCard ? "text-white" : "text-gray-900"
-      )}>
+      <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white">
         {product.name}
       </h3>
-      <p className={cn(
-        "text-sm mb-2",
-        isBlackCard ? "text-gray-200" : "text-gray-700"
-      )}>
+      <p className="text-sm mb-2 text-white">
         {product.description}
       </p>
-      <p className={cn(
-        "absolute bottom-10 left-8 right-8 text-xs italic font-semibold",
-        isBlackCard ? "text-yellow-400" : colorIndex === 1 ? "text-red-600" : "text-yellow-600"
-      )}>
+      <p className="absolute bottom-10 left-8 right-8 text-xs italic font-semibold text-white">
         {product.details}
       </p>
     </div>

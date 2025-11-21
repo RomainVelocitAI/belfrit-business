@@ -48,7 +48,7 @@ export default function QuiSommesNousPage() {
       date: 'Étape 2',
       title: 'Sélection',
       description:
-        'Références adaptées (frites, snacks, sauces) et conseil cuisson. Choix des produits optimaux selon votre segment et votre débit.',
+        'Références adaptées (frites, snacks) et conseil cuisson. Choix des produits optimaux selon votre segment et votre débit.',
       icon: <ClipboardCheck className="w-5 h-5 text-white" />,
       image: '/méthode-selection.jpg',
       category: 'CHOIX',
@@ -62,7 +62,7 @@ export default function QuiSommesNousPage() {
         "Affiches, stickers, chevalets, contenus réseaux. Pack complet de supports pour valoriser l'offre belge en point de vente.",
       icon: <Palette className="w-5 h-5 text-white" />,
       image: '/méthode-plv.jpg',
-      category: 'DEPLOYMENT',
+      category: 'DÉPLOIEMENT',
       color: 'red',
     },
     {
@@ -74,7 +74,7 @@ export default function QuiSommesNousPage() {
       icon: <BarChart className="w-5 h-5 text-white" />,
       image: '/méthode-suivi.jpg',
       category: 'PERFORMANCE',
-      color: 'blue',
+      color: 'white',
     },
   ];
 
@@ -103,7 +103,7 @@ export default function QuiSommesNousPage() {
                 'right-[10%] top-[30%] w-28 h-28 md:w-40 md:h-40 animate-float-medium opacity-70',
             },
             {
-              src: '/logo.png',
+              src: '/3.png',
               alt: 'Logo BelFrit',
               className:
                 'left-[50%] top-[10%] w-36 h-36 md:w-48 md:h-48 -translate-x-1/2',
@@ -166,9 +166,8 @@ export default function QuiSommesNousPage() {
                   Notre mission
                 </h2>
                 <p className="text-xl text-gray-700 leading-relaxed">
-                  Apporter l'authenticité belge aux acteurs du snacking et de
-                  la restauration à La Réunion, avec une exécution simple,
-                  fiable et rentable côté point de vente.
+                  Apporter l'authenticité belge aux établissements CHR à La Réunion,
+                  avec une exécution simple, fiable et rentable côté point de vente.
                 </p>
               </div>
             </div>
@@ -183,8 +182,8 @@ export default function QuiSommesNousPage() {
                 </h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Qualité constante, livraisons planifiées en chaîne du froid,
-                  et un véritable support commercial en magasin (PLV, recettes,
-                  conseils cuisson).
+                  et un véritable support commercial en magasin : PLV, recettes,
+                  conseils cuisson.
                 </p>
               </div>
             </div>
@@ -242,7 +241,7 @@ export default function QuiSommesNousPage() {
             />
             <BentoGridItem
               title="Service"
-              description="Support PDV (PLV, recettes, scripts de vente)."
+              description="Support PDV : PLV, scripts de vente."
               header={
                 <div className="relative w-full h-[240px] rounded-md overflow-hidden">
                   <Image
@@ -327,7 +326,7 @@ export default function QuiSommesNousPage() {
             <FlipCard
               imageSrc="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=800&q=80"
               imageAlt="Chaîne du froid"
-              title="Chaîne du froid -20°C"
+              title="Chaîne du froid -22°C"
               description="Maîtrise totale de la température de la Belgique à votre cuisine"
               buttonText="En savoir plus"
               backContent={{
@@ -374,11 +373,9 @@ export default function QuiSommesNousPage() {
                 title: "Accompagnement PDV",
                 details: [
                   "PLV aux couleurs belges fournie",
-                  "Fiches recettes et suggestions menu",
-                  "Calendrier d'animation saisonnier",
                   "Conseils mise en avant vitrine",
                   "Support marketing personnalisé",
-                  "Formation équipe sur l'origine des produits"
+                  "Fiche formation équipe sur l'origine des produits"
                 ]
               }}
               parallaxSpeed={0.5}
@@ -424,53 +421,53 @@ export default function QuiSommesNousPage() {
             <ThreeDCard
               title="Direction & Partenariats"
               description="Stratégie, sourcing, relations industrielles"
-              icon={<Building className="w-8 h-8 text-white" />}
+              icon={<Building className="w-8 h-8 text-[#E31E24]" />}
               details={[
                 "Gestion partenariats producteurs belges",
                 "Coordination globale des operations",
                 "Stratégie d'approvisionnement et qualité",
                 "Relations industrielles internationales"
               ]}
-              className="bg-[#E31E24] border-2 border-[#FFD700]"
+              className="bg-white border-2 border-[#FFD700] text-gray-900"
             />
 
             <ThreeDCard
               title="Commerce B2B"
               description="Qualification, propositions, suivi comptes multi-sites"
-              icon={<Users className="w-8 h-8 text-white" />}
+              icon={<Users className="w-8 h-8 text-[#E31E24]" />}
               details={[
                 "Qualification des professionnels",
                 "Propositions commerciales personnalisées",
                 "Suivi des comptes multi-sites",
                 "Accompagnement au long terme"
               ]}
-              className="bg-[#003DA5] border-2 border-[#FFD700]"
+              className="bg-white border-2 border-[#FFD700] text-gray-900"
             />
 
             <ThreeDCard
               title="Qualité & Operations"
               description="Logistique froid, traçabilité, conformité"
-              icon={<Truck className="w-8 h-8 text-[#FFD700]" />}
+              icon={<Truck className="w-8 h-8 text-[#E31E24]" />}
               details={[
                 "Gestion de la chaîne du froid",
                 "Traçabilité des lots et DLC",
                 "Conformité aux normes HACCP",
                 "Coordination des livraisons"
               ]}
-              className="bg-black border-2 border-[#FFD700]"
+              className="bg-white border-2 border-[#FFD700] text-gray-900"
             />
 
             <ThreeDCard
               title="Marketing & PLV"
-              description="Identité, supports PDV, contenus & formation courte"
+              description="Identité visuelle, supports PDV et contenus promotionnels"
               icon={<Palette className="w-8 h-8 text-[#E31E24]" />}
               details={[
                 "Création de supports PLV personnalisés",
                 "Fiches produits et recettes",
-                "Formation équipes sur produits belges",
-                "Calendrier d'animation commercial"
+                "Kits de communication point de vente",
+                "Conseils merchandising et mise en avant"
               ]}
-              className="bg-[#FFD700] border-2 border-[#E31E24] text-gray-900"
+              className="bg-white border-2 border-[#FFD700] text-gray-900"
             />
           </div>
 
@@ -544,7 +541,7 @@ export default function QuiSommesNousPage() {
             </h2>
             <p className="text-xl mb-8 text-gray-300">
               Échangeons sur vos besoins spécifiques et construisons ensemble
-              votre offre frites et snacks belges premium
+              de votre offre de produits belges premium uniques
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -563,41 +560,6 @@ export default function QuiSommesNousPage() {
               </a>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-left">
-              <div className="flex gap-3">
-                <span className="text-[#FFD700] text-2xl flex-shrink-0">
-                  ✓
-                </span>
-                <div>
-                  <p className="font-semibold mb-1">Audit personnalisé</p>
-                  <p className="text-sm text-gray-400">
-                    Analyse de votre point de vente
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <span className="text-[#FFD700] text-2xl flex-shrink-0">
-                  ✓
-                </span>
-                <div>
-                  <p className="font-semibold mb-1">Réponse sous 48h</p>
-                  <p className="text-sm text-gray-400">
-                    Retour rapide après qualification
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <span className="text-[#FFD700] text-2xl flex-shrink-0">
-                  ✓
-                </span>
-                <div>
-                  <p className="font-semibold mb-1">Accompagnement complet</p>
-                  <p className="text-sm text-gray-400">
-                    De l'ouverture au suivi des ventes
-                  </p>
-                </div>
-              </div>
-            </div>
 
             <p className="text-center mt-8 text-sm text-gray-400">
               Offres et documents techniques réservés aux comptes

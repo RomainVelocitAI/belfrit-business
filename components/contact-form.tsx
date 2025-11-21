@@ -90,7 +90,7 @@ export default function ContactForm() {
             Ouvrir un compte professionnel
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Remplissez le formulaire ci-dessous pour créer votre compte BelFrit et commencer à commander nos produits belges de qualité
+            Remplissez le formulaire ci-dessous pour créer votre compte BelFrit Business et commencer à commander nos produits belges premium
           </p>
         </motion.div>
 

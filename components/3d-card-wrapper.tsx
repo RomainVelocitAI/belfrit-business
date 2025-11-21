@@ -71,7 +71,7 @@ export const ThreeDCard: React.FC<ThreeDCardProps> = ({
 
         {/* Title */}
         <h3
-          className="text-2xl font-bold text-white mb-3"
+          className="text-2xl font-bold mb-3"
           style={{ transform: 'translateZ(60px)' }}
         >
           {title}
@@ -79,7 +79,7 @@ export const ThreeDCard: React.FC<ThreeDCardProps> = ({
 
         {/* Description */}
         <p
-          className="text-white/90 mb-4 leading-relaxed"
+          className="mb-4 leading-relaxed opacity-90"
           style={{ transform: 'translateZ(70px)' }}
         >
           {description}
@@ -88,12 +88,12 @@ export const ThreeDCard: React.FC<ThreeDCardProps> = ({
         {/* Details List */}
         {details && details.length > 0 && (
           <ul
-            className="space-y-2 text-white/80"
+            className="space-y-2 opacity-80"
             style={{ transform: 'translateZ(80px)' }}
           >
             {details.map((detail, index) => (
               <li key={index} className="flex items-start gap-2">
-                <span className="text-white/60">•</span>
+                <span className="opacity-60">•</span>
                 <span className="text-sm">{detail}</span>
               </li>
             ))}

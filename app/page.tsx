@@ -3,10 +3,9 @@ import { FlipCard } from '@/components/flip-card';
 import { GammesStagger } from '@/components/gammes-stagger';
 import PlvSection from '@/components/plv-section';
 import ContactForm from '@/components/contact-form';
-import { AnimatedTabs } from '@/components/ui/animated-tabs';
+import { SegmentsFlipCards } from '@/components/segments-flip-cards';
 import { Timeline3D, TimelineEvent } from '@/components/3d-interactive-timeline';
-import { Package, Truck, Award, ChefHat, Store, Building, Ship, Warehouse, MapPin } from 'lucide-react';
-import Image from 'next/image';
+import { Package, Truck, Ship, Warehouse } from 'lucide-react';
 
 export default function HomePage() {
   // Configuration des images flottantes pour le hero
@@ -100,7 +99,7 @@ export default function HomePage() {
                 title: "Produits certifiés",
                 details: [
                   "Partenariats directs avec producteurs belges historiques",
-                  "Traçabilité complète de la pomme de terre à l'assiette",
+                  "Du plat péï à l'île intense",
                   "Certifications sanitaires EU et conformité DROM",
                   "Contrôles qualité à chaque étape de la chaîne",
                   "Labels garantissant l'origine et la méthode de fabrication"
@@ -119,7 +118,7 @@ export default function HomePage() {
               backContent={{
                 title: "Logistique maîtrisée",
                 details: [
-                  "Conteneurs réfrigérés -18°C du port de Liège à La Réunion",
+                  "Conteneurs réfrigérés -22°C du port d'Anvers à La Réunion",
                   "Rotations maritimes mensuelles garantissant stock constant",
                   "Entrepôt frigorifique local certifié avec backup électrique",
                   "Livraisons programmées selon vos besoins opérationnels",
@@ -134,15 +133,13 @@ export default function HomePage() {
               imageSrc="/card-accompagnement.jpg"
               imageAlt="Accompagnement professionnel"
               title="Accompagnement pro"
-              description="PLV fournie, fiches techniques, formations cuisson, recettes exclusives"
+              description="PLV fournie, fiches techniques, support commercial continu"
               buttonText="En savoir plus"
               backContent={{
                 title: "Accompagnement pro",
                 details: [
                   "Kit PLV complet : affiches, chevalets, stickers origine Belgique",
                   "Fiches techniques détaillées : temps/température de cuisson optimaux",
-                  "Formation sur site : maîtrise de la friteuse professionnelle",
-                  "Recettes exclusives développées par chefs belges",
                   "Support commercial continu et conseil merchandising"
                 ]
               }}
@@ -175,119 +172,11 @@ export default function HomePage() {
               Qui servons-nous ?
             </h2>
             <p className="text-xl text-gray-600">
-              Des solutions adaptées à chaque type de professionnel
+              Des solutions adaptées à chaque type de professionnel à La Réunion
             </p>
           </div>
 
-          <div className="flex justify-center">
-            <AnimatedTabs
-              className="max-w-4xl"
-              tabs={[
-                {
-                  id: "restauration",
-                  label: "Restauration",
-                  color: "#003DA5",
-                  content: (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                      <div className="relative h-64 rounded-lg overflow-hidden">
-                        <Image
-                          src="/segment-restauration.jpg"
-                          alt="Restaurant professionnel"
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="flex flex-col gap-4">
-                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20">
-                          <ChefHat className="w-8 h-8 text-white" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-white">Restauration</h3>
-                        <ul className="space-y-2 text-white">
-                          <li>• Restaurants traditionnels</li>
-                          <li>• Fast-food et snacks</li>
-                          <li>• Food-trucks</li>
-                          <li>• Restaurants d'hôtels</li>
-                        </ul>
-                        <div className="mt-auto pt-4 border-t border-white/30">
-                          <p className="text-sm font-semibold text-white">
-                            Fiches techniques et formations cuisson incluses
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ),
-                },
-                {
-                  id: "distribution",
-                  label: "Distribution",
-                  color: "#FFD700",
-                  content: (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                      <div className="relative h-64 rounded-lg overflow-hidden">
-                        <Image
-                          src="/segment-distribution.jpg"
-                          alt="Point de vente"
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="flex flex-col gap-4">
-                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-900/20">
-                          <Store className="w-8 h-8 text-gray-900" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900">Distribution</h3>
-                        <ul className="space-y-2 text-gray-900">
-                          <li>• Supérettes et épiceries</li>
-                          <li>• Stations-service</li>
-                          <li>• Cafétérias d'entreprise</li>
-                          <li>• Points de vente isolés</li>
-                        </ul>
-                        <div className="mt-auto pt-4 border-t border-gray-900/30">
-                          <p className="text-sm font-semibold text-gray-900">
-                            PLV et support merchandising fournis
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ),
-                },
-                {
-                  id: "collectivites",
-                  label: "Collectivites",
-                  color: "#ED1C24",
-                  content: (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                      <div className="relative h-64 rounded-lg overflow-hidden">
-                        <Image
-                          src="/segment-collectivites.jpg"
-                          alt="Restauration collective"
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="flex flex-col gap-4">
-                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20">
-                          <Building className="w-8 h-8 text-white" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-white">Collectivites</h3>
-                        <ul className="space-y-2 text-white">
-                          <li>• Cantines scolaires</li>
-                          <li>• Restaurants d'entreprise</li>
-                          <li>• Etablissements de sante</li>
-                          <li>• Centres de loisirs</li>
-                        </ul>
-                        <div className="mt-auto pt-4 border-t border-white/30">
-                          <p className="text-sm font-semibold text-white">
-                            Volumes adaptes et facturation simplifiee
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ),
-                },
-              ]}
-            />
-          </div>
+          <SegmentsFlipCards />
         </div>
       </section>
 
@@ -304,9 +193,8 @@ export default function HomePage() {
               </p>
               <p className="text-lg text-gray-900 max-w-3xl mx-auto leading-relaxed">
                 De l'entrepôt belge à votre cuisine, chaque étape est contrôlée. Notre système de
-                stockage frigorifique à La Réunion, nos tournées planifiées et notre suivi numérique
-                des DLC garantissent une fraîcheur optimale. Vous vous concentrez sur la cuisine,
-                nous gérons la logistique.
+                stockage frigorifique à La Réunion, nos tournées planifiées et notre suivi numérique strict
+                des DLC garantissent une fraîcheur optimale.
               </p>
             </div>
 
@@ -317,16 +205,16 @@ export default function HomePage() {
                   date: "Etape 1",
                   title: "Import direct Belgique",
                   description: "Sélection des meilleurs fournisseurs belges avec contrôle qualité strict à la source. Partenariats directs garantissant l'authenticité et la traçabilité complète de chaque produit.",
-                  icon: <Package className="w-5 h-5 text-white" />,
+                  icon: <Package className="w-5 h-5 text-gray-900" />,
                   image: "/timeline-import.jpg",
                   category: "ORIGINE",
-                  color: "black"
+                  color: "white"
                 },
                 {
                   id: "transport",
                   date: "Etape 2",
                   title: "Transport maritime sécurisé",
-                  description: "Conteneurs réfrigérés maintenant -18°C à -22°C durant tout le trajet. Suivi GPS en temps réel et respect strict des normes HACCP pour une chaîne du froid irréprochable.",
+                  description: "Conteneurs réfrigérés maintenant -22°C durant tout le trajet. Suivi GPS en temps réel et respect strict des normes HACCP pour une chaîne du froid irréprochable.",
                   icon: <Ship className="w-5 h-5 text-white" />,
                   image: "/timeline-transport.jpg",
                   category: "TRANSIT",
@@ -346,11 +234,11 @@ export default function HomePage() {
                   id: "livraison",
                   date: "Etape 4",
                   title: "Livraison express sur mesure",
-                  description: "Camions frigorifiques avec livraisons programmées selon vos besoins. Garantie de fraîcheur jusqu'à votre cuisine et système d'alerte préventif sur les ruptures potentielles.",
-                  icon: <Truck className="w-5 h-5 text-white" />,
+                  description: "Camions frigorifiques avec livraisons programmées selon vos besoins. Garantie de fraîcheur et système d'alerte préventif sur les ruptures potentielles.",
+                  icon: <Truck className="w-5 h-5 text-gray-900" />,
                   image: "/timeline-livraison.jpg",
                   category: "DISTRIBUTION",
-                  color: "blue"
+                  color: "white"
                 }
               ] as TimelineEvent[]}
               backgroundColor="bg-transparent"
@@ -369,7 +257,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Tournées planifiées</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Optimisation des livraisons selon vos besoins réels, réduction des coûts de transport
+                  Optimisation des livraisons selon vos besoins réels
                 </p>
               </div>
 
@@ -379,7 +267,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Traçabilité & DLC</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Suivi numérique complet, alertes automatiques pour une gestion sans perte
+                  Suivi numérique complet, alertes automatiques
                 </p>
               </div>
 
@@ -424,30 +312,6 @@ export default function HomePage() {
               >
                 Consulter le catalogue
               </a>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-left">
-              <div className="flex gap-3">
-                <span className="text-primary-gold text-2xl flex-shrink-0">✓</span>
-                <div>
-                  <p className="font-semibold mb-1">Sans engagement</p>
-                  <p className="text-sm text-gray-400">Commandez quand vous voulez</p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <span className="text-primary-gold text-2xl flex-shrink-0">✓</span>
-                <div>
-                  <p className="font-semibold mb-1">Paiement flexible</p>
-                  <p className="text-sm text-gray-400">30 jours nets après livraison</p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <span className="text-primary-gold text-2xl flex-shrink-0">✓</span>
-                <div>
-                  <p className="font-semibold mb-1">Support dédié</p>
-                  <p className="text-sm text-gray-400">Conseiller attitré disponible</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
