@@ -7,6 +7,11 @@ import Footer from "@/components/footer";
 export const metadata: Metadata = {
   title: "Frites & snacks belges B2B à La Réunion | BelFrit-Business",
   description: "Distribution belge premium pour professionnels : qualité, chaîne du froid, PLV & recettes. Ouvrez votre compte pro et accédez à la grille tarifaire.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
