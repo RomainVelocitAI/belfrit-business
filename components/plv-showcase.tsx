@@ -32,7 +32,7 @@ export default function PlvShowcase() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold bg-gradient-to-r from-[#FFD700] via-[#E31E24] to-[#000000] bg-clip-text text-transparent mb-4"
+            className="text-4xl font-bold bg-gradient-to-r from-belfrit-yellow via-belfrit-red to-belfrit-black bg-clip-text text-transparent mb-4"
           >
             PLV & accompagnement
           </motion.h2>
@@ -83,8 +83,8 @@ export default function PlvShowcase() {
                     <h3 className="text-white text-xl font-bold mb-2">{item.title}</h3>
                     <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
                       item.category === "supports"
-                        ? "bg-[#FFD700] text-black"
-                        : "bg-[#E31E24] text-white"
+                        ? "bg-belfrit-yellow text-black"
+                        : "bg-belfrit-red text-white"
                     }`}>
                       {item.category === "supports" ? "Supports visuels" : "Formation & recettes"}
                     </span>
@@ -101,20 +101,20 @@ export default function PlvShowcase() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-[#FFD700]/10 to-transparent p-8 rounded-xl border border-[#FFD700]/20"
+            className="bg-gradient-to-br from-belfrit-yellow/10 to-transparent p-8 rounded-xl border border-belfrit-yellow/20"
           >
-            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">Supports visuels</h3>
+            <h3 className="text-2xl font-bold text-belfrit-yellow mb-4">Supports visuels</h3>
             <ul className="space-y-2 text-gray-900">
               <li className="flex items-start">
-                <span className="text-[#FFD700] mr-2">•</span>
+                <span className="text-belfrit-yellow mr-2">•</span>
                 Affiches, ardoises, chevalets
               </li>
               <li className="flex items-start">
-                <span className="text-[#FFD700] mr-2">•</span>
+                <span className="text-belfrit-yellow mr-2">•</span>
                 Stickers et autocollants
               </li>
               <li className="flex items-start">
-                <span className="text-[#FFD700] mr-2">•</span>
+                <span className="text-belfrit-yellow mr-2">•</span>
                 Présentoirs et matériel
               </li>
             </ul>
@@ -124,20 +124,20 @@ export default function PlvShowcase() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-[#E31E24]/10 to-transparent p-8 rounded-xl border border-[#E31E24]/20"
+            className="bg-gradient-to-br from-belfrit-red/10 to-transparent p-8 rounded-xl border border-belfrit-red/20"
           >
-            <h3 className="text-2xl font-bold text-[#E31E24] mb-4">Formation & recettes</h3>
+            <h3 className="text-2xl font-bold text-belfrit-red mb-4">Formation & recettes</h3>
             <ul className="space-y-2 text-gray-900">
               <li className="flex items-start">
-                <span className="text-[#E31E24] mr-2">•</span>
+                <span className="text-belfrit-red mr-2">•</span>
                 Fiches techniques détaillées
               </li>
               <li className="flex items-start">
-                <span className="text-[#E31E24] mr-2">•</span>
+                <span className="text-belfrit-red mr-2">•</span>
                 Recettes exclusives
               </li>
               <li className="flex items-start">
-                <span className="text-[#E31E24] mr-2">•</span>
+                <span className="text-belfrit-red mr-2">•</span>
                 Formations cuisson et hotline technique
               </li>
             </ul>

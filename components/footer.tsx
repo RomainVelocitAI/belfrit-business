@@ -28,7 +28,7 @@ export default function Footer() {
                 href="https://facebook.com/belfritbusiness"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-100 hover:bg-[#E31E24] text-gray-900 hover:text-white rounded-full flex items-center justify-center transition-colors"
+                className="w-10 h-10 bg-gray-100 hover:bg-belfrit-red text-gray-900 hover:text-white rounded-full flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -39,7 +39,7 @@ export default function Footer() {
                 href="https://instagram.com/belfritbusiness"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-100 hover:bg-[#E31E24] text-gray-900 hover:text-white rounded-full flex items-center justify-center transition-colors"
+                className="w-10 h-10 bg-gray-100 hover:bg-belfrit-red text-gray-900 hover:text-white rounded-full flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -51,30 +51,30 @@ export default function Footer() {
 
           {/* Colonne 2 - Navigation */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-[#FFD700]">Navigation</h3>
+            <h3 className="text-lg font-bold mb-6 text-belfrit-yellow">Navigation</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/" className="text-gray-900 hover:text-belfrit-red transition-colors">
                   Accueil
                 </Link>
               </li>
               <li>
-                <Link href="/catalogue" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/catalogue" className="text-gray-900 hover:text-belfrit-red transition-colors">
                   Nos gammes
                 </Link>
               </li>
               <li>
-                <Link href="/catalogue" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/catalogue" className="text-gray-900 hover:text-belfrit-red transition-colors">
                   Catalogue
                 </Link>
               </li>
               <li>
-                <Link href="/#contact" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/#contact" className="text-gray-900 hover:text-belfrit-red transition-colors">
                   Devenir partenaire
                 </Link>
               </li>
               <li>
-                <Link href="/#contact" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/#contact" className="text-gray-900 hover:text-belfrit-red transition-colors">
                   Contact
                 </Link>
               </li>
@@ -83,25 +83,25 @@ export default function Footer() {
 
           {/* Colonne 3 - Informations légales */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-[#FFD700]">Informations légales</h3>
+            <h3 className="text-lg font-bold mb-6 text-belfrit-yellow">Informations légales</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/mentions-legales" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/mentions-legales" className="text-gray-900 hover:text-belfrit-red transition-colors">
                   Mentions légales
                 </Link>
               </li>
               <li>
-                <Link href="/politique-confidentialite" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/politique-confidentialite" className="text-gray-900 hover:text-belfrit-red transition-colors">
                   Politique de confidentialité
                 </Link>
               </li>
               <li>
-                <Link href="/cgu" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/cgu" className="text-gray-900 hover:text-belfrit-red transition-colors">
                   CGU
                 </Link>
               </li>
               <li>
-                <Link href="/cgu" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Link href="/cgu" className="text-gray-900 hover:text-belfrit-red transition-colors">
                   CGV
                 </Link>
               </li>
@@ -110,22 +110,22 @@ export default function Footer() {
 
           {/* Colonne 4 - Contact */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-[#FFD700]">Contact</h3>
+            <h3 className="text-lg font-bold mb-6 text-belfrit-yellow">Contact</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#E31E24] flex-shrink-0 mt-0.5" />
-                <a href="tel:+262693659589" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Phone className="w-5 h-5 text-belfrit-red flex-shrink-0 mt-0.5" />
+                <a href="tel:+262693659589" className="text-gray-900 hover:text-belfrit-red transition-colors">
                   +262 693 659 589
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#E31E24] flex-shrink-0 mt-0.5" />
-                <a href="mailto:info@belfritbusiness.fr" className="text-gray-900 hover:text-[#E31E24] transition-colors">
+                <Mail className="w-5 h-5 text-belfrit-red flex-shrink-0 mt-0.5" />
+                <a href="mailto:info@belfritbusiness.fr" className="text-gray-900 hover:text-belfrit-red transition-colors">
                   info@belfritbusiness.fr
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#E31E24] flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-belfrit-red flex-shrink-0 mt-0.5" />
                 <span className="text-gray-900">
                   Le Port<br />
                   Réunion
@@ -144,12 +144,12 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} BelFrit Business. Tous droits réservés.
             </p>
             <p>
-              Propulsé par <a href="https://digiqo.re" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-[#E31E24] transition-colors">Digiqo</a>, La di la fé zot pub
+              Propulsé par <a href="https://digiqo.re" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-belfrit-red transition-colors">Digiqo</a>, La di la fé zot pub
             </p>
             <p className="flex items-center gap-2">
               <span className="inline-block w-6 h-4 bg-black"></span>
-              <span className="inline-block w-6 h-4 bg-[#FFD700]"></span>
-              <span className="inline-block w-6 h-4 bg-[#E31E24]"></span>
+              <span className="inline-block w-6 h-4 bg-belfrit-yellow"></span>
+              <span className="inline-block w-6 h-4 bg-belfrit-red"></span>
               <span className="ml-2">Produits belges authentiques</span>
             </p>
           </div>

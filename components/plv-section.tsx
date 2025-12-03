@@ -82,11 +82,11 @@ export default function PlvSection() {
             </h3>
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-2">
-                <span className="text-[#FFD700] mt-1">●</span>
+                <span className="text-belfrit-yellow mt-1">●</span>
                 <span>
                   Affiches publicitaires
                   <span className="relative inline-block group ml-1">
-                    <span className="text-[#FFD700] cursor-help">*</span>
+                    <span className="text-belfrit-yellow cursor-help">*</span>
                     <span className="invisible group-hover:visible absolute left-0 top-6 w-64 bg-gray-900 text-white text-sm rounded-lg px-3 py-2 z-10 shadow-lg">
                       Disponibilité selon les stocks et le volume de commande
                     </span>
@@ -94,15 +94,15 @@ export default function PlvSection() {
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#FFD700] mt-1">●</span>
+                <span className="text-belfrit-yellow mt-1">●</span>
                 <span>Ardoises menu et chevalets de comptoir</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#FFD700] mt-1">●</span>
+                <span className="text-belfrit-yellow mt-1">●</span>
                 <span>Stickers et présentoirs attractifs</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#FFD700] mt-1">●</span>
+                <span className="text-belfrit-yellow mt-1">●</span>
                 <span>Matériel PLV complet aux couleurs de la Belgique</span>
               </li>
             </ul>
@@ -114,15 +114,15 @@ export default function PlvSection() {
             </h3>
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-2">
-                <span className="text-[#E31E24] mt-1">●</span>
+                <span className="text-belfrit-red mt-1">●</span>
                 <span>Fiches techniques détaillées pour chaque produit</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#E31E24] mt-1">●</span>
+                <span className="text-belfrit-red mt-1">●</span>
                 <span>Fiches cuisson et conseils de préparation</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#E31E24] mt-1">●</span>
+                <span className="text-belfrit-red mt-1">●</span>
                 <span>Hotline technique disponible pour vos questions</span>
               </li>
             </ul>

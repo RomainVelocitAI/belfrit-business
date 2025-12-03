@@ -23,8 +23,8 @@ export default function PolitiqueConfidentialitePage() {
               Le responsable du traitement des données personnelles est :<br />
               <strong>BelFrit Business</strong><br />
               Directeur de publication : Angelo Rapazzini<br />
-              Email : <a href="mailto:info@belfritbusiness.fr" className="text-[#E31E24] hover:underline">info@belfritbusiness.fr</a><br />
-              Téléphone : <a href="tel:+262693659589" className="text-[#E31E24] hover:underline">+262 693 659 589</a>
+              Email : <a href="mailto:info@belfritbusiness.fr" className="text-belfrit-red hover:underline">info@belfritbusiness.fr</a><br />
+              Téléphone : <a href="tel:+262693659589" className="text-belfrit-red hover:underline">+262 693 659 589</a>
             </p>
           </section>
 
@@ -122,10 +122,10 @@ export default function PolitiqueConfidentialitePage() {
               <li><strong>Droit de retirer votre consentement</strong> : à tout moment</li>
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
-              Pour exercer vos droits, contactez-nous à : <a href="mailto:info@belfritbusiness.fr" className="text-[#E31E24] hover:underline font-semibold">info@belfritbusiness.fr</a>
+              Pour exercer vos droits, contactez-nous à : <a href="mailto:info@belfritbusiness.fr" className="text-belfrit-red hover:underline font-semibold">info@belfritbusiness.fr</a>
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              Vous disposez également du droit d'introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-[#E31E24] hover:underline">www.cnil.fr</a>).
+              Vous disposez également du droit d'introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-belfrit-red hover:underline">www.cnil.fr</a>).
             </p>
           </section>
 
@@ -177,12 +177,12 @@ export default function PolitiqueConfidentialitePage() {
           </section>
 
           {/* Contact */}
-          <section className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#E31E24]">
+          <section className="bg-gray-50 p-6 rounded-lg border-l-4 border-belfrit-red">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Nous contacter</h2>
             <p className="text-gray-700 leading-relaxed">
               Pour toute question concernant cette politique de confidentialité ou pour exercer vos droits :<br />
-              Email : <a href="mailto:info@belfritbusiness.fr" className="text-[#E31E24] hover:underline font-semibold">info@belfritbusiness.fr</a><br />
-              Téléphone : <a href="tel:+262693659589" className="text-[#E31E24] hover:underline font-semibold">+262 693 659 589</a><br />
+              Email : <a href="mailto:info@belfritbusiness.fr" className="text-belfrit-red hover:underline font-semibold">info@belfritbusiness.fr</a><br />
+              Téléphone : <a href="tel:+262693659589" className="text-belfrit-red hover:underline font-semibold">+262 693 659 589</a><br />
               Adresse : BelFrit Business, La Réunion, France
             </p>
           </section>

@@ -36,7 +36,7 @@ export const Floating3DCard: React.FC = () => {
           ref={cardRef}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
-          className="group relative w-full max-w-xs sm:max-w-sm md:max-w-md rounded-md border border-black/10 bg-white p-6 shadow-lg transition-transform duration-300 ease-out hover:shadow-xl dark:border-white/20 dark:bg-[#111111] dark:hover:shadow-2xl dark:hover:shadow-emerald-500/20"
+          className="group relative w-full max-w-xs sm:max-w-sm md:max-w-md rounded-md border border-black/10 bg-white p-6 shadow-lg transition-transform duration-300 ease-out hover:shadow-xl dark:border-white/20 dark:bg-belfrit-darkBg dark:hover:shadow-2xl dark:hover:shadow-emerald-500/20"
           style={{ transformStyle: "preserve-3d" }}
         >
           {/* Content with translateZ for depth effect */}

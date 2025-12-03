@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { BELFRIT_COLORS } from '@/lib/colors';
 
 export interface TimelineEvent {
   id: string;
@@ -127,15 +128,16 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
               const isEven = index % 2 === 0;
 
               // Conversion des couleurs du drapeau belge + bleu + blanc
+              // Utilise les couleurs centralisées depuis lib/colors.ts
               const colorMap: { [key: string]: string } = {
-                'black': '#000000',
-                'yellow': '#FFD700',
-                'red': '#E31E24',
-                'blue': '#1E3A8A',
-                'white': '#FFFFFF'
+                'black': BELFRIT_COLORS.black,
+                'yellow': BELFRIT_COLORS.yellow,
+                'red': BELFRIT_COLORS.red,
+                'blue': BELFRIT_COLORS.darkBlue,
+                'white': BELFRIT_COLORS.white
               };
 
-              const bgColor = event.color && colorMap[event.color] ? colorMap[event.color] : '#1e293b';
+              const bgColor = event.color && colorMap[event.color] ? colorMap[event.color] : BELFRIT_COLORS.darkCard;
               const textColorClass = (event.color === 'yellow' || event.color === 'white') ? 'text-gray-900' : 'text-white';
               const eventColor = event.color ? `bg-${event.color}-500` : primaryColor;
 

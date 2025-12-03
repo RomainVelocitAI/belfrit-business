@@ -1,10 +1,41 @@
+/* Polices selon charte graphique BelFrit */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Nothing+You+Could+Do&display=swap');
+/* Anciennes polices conservées pour compatibilité */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
 
+/* Définition des couleurs BelFrit pour Tailwind v4 */
+@theme {
+  /* Couleurs principales (charte graphique) */
+  --color-belfrit-red: #FF0025;
+  --color-belfrit-red-dark: #E60022;
+  --color-belfrit-yellow: #FFDB00;
+  --color-belfrit-yellow-dark: #E6C500;
+  --color-belfrit-black: #000000;
+  --color-belfrit-white: #FFFFFF;
+  --color-belfrit-camel: #CD9760;
+  --color-belfrit-shell: #F4E8DF;
+
+  /* Couleurs UI/Utilitaires */
+  --color-belfrit-darkBg: #111111;
+  --color-belfrit-darkCard: #1e293b;
+  --color-belfrit-darkBlue: #1E3A8A;
+
+  /* Anciennes couleurs (compatibilité) */
+  --color-primary-red: #FF0025;
+  --color-primary-gold: #FFDB00;
+
+  /* Couleurs Réunion */
+  --color-reunion-blue: #0055A4;
+  --color-reunion-yellow: #FCD116;
+  --color-reunion-red: #CE1126;
+}
+
 @layer base {
   html, body {
-    background-color: #E31E24 !important;
+    /* Couleur de fond selon charte: Rouge #FF0025 */
+    background-color: #FF0025 !important;
     background-image: url('/pattern-background.png') !important;
     background-repeat: repeat-y !important;
     background-attachment: fixed !important;
@@ -13,14 +44,16 @@
   }
 
   body {
-    font-family: 'Montserrat', sans-serif;
+    /* Police corps selon charte: Roboto */
+    font-family: 'Roboto', sans-serif;
     color: #111827;
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Anton', sans-serif;
-  letter-spacing: 0.025em;
+  /* Police titres selon charte: Arial Black */
+  font-family: 'Arial Black', 'Arial Bold', sans-serif;
+  letter-spacing: -0.05em; /* Espacement -75 selon charte */
 }
 
 /* Utilitaires personnalisés */
@@ -35,21 +68,22 @@ h1, h2, h3, h4, h5, h6 {
   bottom: -8px;
   width: 80px;
   height: 4px;
+  /* Jaune selon charte: #FFDB00 */
   background: linear-gradient(90deg,
-    #FFD700 0%,
-    #FFD700 20%,
+    #FFDB00 0%,
+    #FFDB00 20%,
     transparent 20%,
     transparent 25%,
-    #FFD700 25%,
-    #FFD700 45%,
+    #FFDB00 25%,
+    #FFDB00 45%,
     transparent 45%,
     transparent 50%,
-    #FFD700 50%,
-    #FFD700 70%,
+    #FFDB00 50%,
+    #FFDB00 70%,
     transparent 70%,
     transparent 75%,
-    #FFD700 75%,
-    #FFD700 95%
+    #FFDB00 75%,
+    #FFDB00 95%
   );
 }
 
@@ -68,13 +102,14 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   width: 100px;
   height: 6px;
+  /* Couleurs drapeau belge selon charte: Noir #000000, Jaune #FFDB00, Rouge #FF0025 */
   background: linear-gradient(90deg,
     #000000 0%,
     #000000 33%,
-    #FFD700 33%,
-    #FFD700 66%,
-    #E31E24 66%,
-    #E31E24 100%
+    #FFDB00 33%,
+    #FFDB00 66%,
+    #FF0025 66%,
+    #FF0025 100%
   );
 }
 
@@ -90,7 +125,8 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   width: 100%;
   height: 4px;
-  background: rgba(255, 215, 0, 0.8);
+  /* Jaune selon charte: #FFDB00 avec opacité */
+  background: rgba(255, 219, 0, 0.8);
 }
 
 /* Animations pour les images flottantes */

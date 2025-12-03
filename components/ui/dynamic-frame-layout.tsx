@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
+import { BELFRIT_COLORS, REUNION_FLAG_COLORS } from "@/lib/colors"
 
 interface Frame {
   id: number
@@ -53,10 +54,10 @@ function FrameComponent({
 }: FrameComponentProps) {
   const getBadgeGradient = () => {
     if (badgeColor === 'belgium') {
-      return 'linear-gradient(to right, #000000 33%, #FFD700 33%, #FFD700 66%, #E31E24 66%)'
+      return `linear-gradient(to right, ${BELFRIT_COLORS.black} 33%, ${BELFRIT_COLORS.yellow} 33%, ${BELFRIT_COLORS.yellow} 66%, ${BELFRIT_COLORS.red} 66%)`
     }
-    // Réunion colors: blue (#0055A4), yellow (#FCD116), red (#CE1126)
-    return 'linear-gradient(to right, #0055A4 33%, #FCD116 33%, #FCD116 66%, #CE1126 66%)'
+    // Réunion colors
+    return `linear-gradient(to right, ${REUNION_FLAG_COLORS.blue} 33%, ${REUNION_FLAG_COLORS.yellow} 33%, ${REUNION_FLAG_COLORS.yellow} 66%, ${REUNION_FLAG_COLORS.red} 66%)`
   }
   return (
     <div

@@ -32,8 +32,8 @@ export default function CguPage() {
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
               Directeur de publication : Angelo Rapazzini<br />
-              Email : <a href="mailto:info@belfritbusiness.fr" className="text-[#E31E24] hover:underline">info@belfritbusiness.fr</a><br />
-              Téléphone : <a href="tel:+262693659589" className="text-[#E31E24] hover:underline">+262 693 659 589</a>
+              Email : <a href="mailto:info@belfritbusiness.fr" className="text-belfrit-red hover:underline">info@belfritbusiness.fr</a><br />
+              Téléphone : <a href="tel:+262693659589" className="text-belfrit-red hover:underline">+262 693 659 589</a>
             </p>
           </section>
 
@@ -95,10 +95,10 @@ export default function CguPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Article 7 - Protection des données personnelles</h2>
             <p className="text-gray-700 leading-relaxed">
-              Vos données personnelles sont traitées conformément à notre <a href="/politique-confidentialite" className="text-[#E31E24] hover:underline font-semibold">Politique de confidentialité</a> et au Règlement Général sur la Protection des Données (RGPD).
+              Vos données personnelles sont traitées conformément à notre <a href="/politique-confidentialite" className="text-belfrit-red hover:underline font-semibold">Politique de confidentialité</a> et au Règlement Général sur la Protection des Données (RGPD).
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              Vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données vous concernant. Pour exercer ces droits, contactez-nous à <a href="mailto:info@belfritbusiness.fr" className="text-[#E31E24] hover:underline">info@belfritbusiness.fr</a>.
+              Vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données vous concernant. Pour exercer ces droits, contactez-nous à <a href="mailto:info@belfritbusiness.fr" className="text-belfrit-red hover:underline">info@belfritbusiness.fr</a>.
             </p>
           </section>
 
@@ -163,12 +163,12 @@ export default function CguPage() {
           </section>
 
           {/* Contact */}
-          <section className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#E31E24]">
+          <section className="bg-gray-50 p-6 rounded-lg border-l-4 border-belfrit-red">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Nous contacter</h2>
             <p className="text-gray-700 leading-relaxed">
               Pour toute question concernant ces CGU :<br />
-              Email : <a href="mailto:info@belfritbusiness.fr" className="text-[#E31E24] hover:underline font-semibold">info@belfritbusiness.fr</a><br />
-              Téléphone : <a href="tel:+262693659589" className="text-[#E31E24] hover:underline font-semibold">+262 693 659 589</a><br />
+              Email : <a href="mailto:info@belfritbusiness.fr" className="text-belfrit-red hover:underline font-semibold">info@belfritbusiness.fr</a><br />
+              Téléphone : <a href="tel:+262693659589" className="text-belfrit-red hover:underline font-semibold">+262 693 659 589</a><br />
               Adresse : BelFrit Business, La Réunion, France
             </p>
           </section>

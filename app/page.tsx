@@ -49,9 +49,9 @@ export default function HomePage() {
       <FloatingFoodHero
         title={
           <>
-            <span className="text-[#000000]">Les vrais produits </span>
-            <span className="text-[#FFD700]">belges</span>
-            <span className="text-[#E31E24]">, en B2B à La Réunion.</span>
+            <span className="text-belfrit-black">Les vrais produits </span>
+            <span className="text-belfrit-yellow">belges</span>
+            <span className="text-belfrit-red">, en B2B à La Réunion.</span>
           </>
         }
         description="Qualité constante, chaîne du froid maîtrisée, accompagnement point-de-vente."
@@ -66,13 +66,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#E31E24] rounded-lg shadow-lg"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-belfrit-red rounded-lg shadow-lg"
             >
               Ouvrir un compte pro
             </a>
             <a
               href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-[#FFD700] rounded-lg shadow-lg"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-belfrit-yellow rounded-lg shadow-lg"
             >
               Recevoir la grille tarifaire
             </a>
@@ -242,17 +242,17 @@ export default function HomePage() {
                 }
               ] as TimelineEvent[]}
               backgroundColor="bg-transparent"
-              primaryColor="bg-[#E31E24]"
-              secondaryColor="bg-[#FFD700]"
+              primaryColor="bg-belfrit-red"
+              secondaryColor="bg-belfrit-yellow"
               textColor="text-gray-900"
-              accentColor="bg-[#FFD700]"
+              accentColor="bg-belfrit-yellow"
               showImages={true}
               className="!py-12"
             />
 
             <div className="mt-16 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <div className="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-[#E31E24] hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-[#E31E24] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-belfrit-red hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-belfrit-red rounded-full flex items-center justify-center mx-auto mb-4">
                   <Truck className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Tournées planifiées</h3>
@@ -261,8 +261,8 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-[#FFD700] hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-[#FFD700] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-belfrit-yellow hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-belfrit-yellow rounded-full flex items-center justify-center mx-auto mb-4">
                   <Package className="w-8 h-8 text-gray-900" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Traçabilité & DLC</h3>
@@ -302,13 +302,13 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <a
                 href="/#contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#E31E24] rounded-lg shadow-lg transform hover:scale-105 transition-transform"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-belfrit-red rounded-lg shadow-lg transform hover:scale-105 transition-transform"
               >
                 Ouvrir un compte pro
               </a>
               <a
                 href="/catalogue"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-[#FFD700] rounded-lg shadow-lg transform hover:scale-105 transition-transform"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-belfrit-yellow rounded-lg shadow-lg transform hover:scale-105 transition-transform"
               >
                 Consulter le catalogue
               </a>

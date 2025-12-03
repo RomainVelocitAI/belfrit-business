@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { BELFRIT_COLORS } from "@/lib/colors";
 
 interface Tab {
 id: string;
@@ -101,7 +102,7 @@ return (
     <div
       className="flex gap-2 flex-wrap bg-opacity-90 backdrop-blur-sm p-1 rounded-xl transition-colors duration-500"
       style={{
-        backgroundColor: tabs.find(t => t.id === activeTab)?.color || "#11111198"
+        backgroundColor: tabs.find(t => t.id === activeTab)?.color || `${BELFRIT_COLORS.darkBg}98`
       }}
     >
       {tabs.map((tab) => (
@@ -111,7 +112,7 @@ return (
           className={cn(
             "relative px-3 py-1.5 text-sm font-medium rounded-lg outline-none transition-all duration-300",
             activeTab === tab.id
-              ? (tab.color === "#FFD700" ? "text-gray-900" : "text-white")
+              ? (tab.color === BELFRIT_COLORS.yellow ? "text-gray-900" : "text-white")
               : "text-white/60 hover:text-white/80"
           )}
         >
@@ -130,7 +131,7 @@ return (
     <div
       className="p-4 shadow-[0_0_20px_rgba(0,0,0,0.2)] bg-opacity-90 backdrop-blur-sm rounded-xl border min-h-60 h-full"
       style={{
-        backgroundColor: tabs.find(t => t.id === activeTab)?.color || "#11111198"
+        backgroundColor: tabs.find(t => t.id === activeTab)?.color || `${BELFRIT_COLORS.darkBg}98`
       }}
     >
       {tabs.map(
@@ -151,7 +152,7 @@ return (
                 ease: "circInOut",
                 type: "spring",
               }}
-              className={tab.color === "#FFD700" ? "text-gray-900" : "text-white"}
+              className={tab.color === BELFRIT_COLORS.yellow ? "text-gray-900" : "text-white"}
             >
               {tab.content}
             </motion.div>

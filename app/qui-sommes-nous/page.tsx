@@ -85,7 +85,7 @@ export default function QuiSommesNousPage() {
         <FloatingFoodHero
           title={
             <>
-              <span className="text-[#000000]">Qui sommes-nous</span>
+              <span className="text-belfrit-black">Qui sommes-nous</span>
             </>
           }
           description="BelFrit-Business distribue des frites, snacks et sauces belges premium pour professionnels à La Réunion. Notre exigence : qualité constante, chaîne du froid maîtrisée et accompagnement point-de-vente."
@@ -135,13 +135,13 @@ export default function QuiSommesNousPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
             <a
               href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#E31E24] rounded-lg shadow-lg transform hover:scale-105 transition-transform"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-belfrit-red rounded-lg shadow-lg transform hover:scale-105 transition-transform"
             >
               Échanger avec un spécialiste
             </a>
             <a
               href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-[#FFD700] rounded-lg shadow-lg transform hover:scale-105 transition-transform"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-belfrit-yellow rounded-lg shadow-lg transform hover:scale-105 transition-transform"
             >
               <Phone className="w-5 h-5 mr-2" />
               Être rappelé par un conseiller
@@ -156,9 +156,9 @@ export default function QuiSommesNousPage() {
       {/* SECTION 2: Mission & Promesse */}
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="bg-transparent rounded-2xl p-8 md:p-12 border-t-4 border-[#E31E24]">
+          <div className="bg-transparent rounded-2xl p-8 md:p-12 border-t-4 border-belfrit-red">
             <div className="flex items-start gap-4 mb-6">
-              <div className="w-16 h-16 bg-[#FFD700] rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-16 h-16 bg-belfrit-yellow rounded-full flex items-center justify-center flex-shrink-0">
                 <Target className="w-8 h-8 text-gray-900" />
               </div>
               <div>
@@ -173,7 +173,7 @@ export default function QuiSommesNousPage() {
             </div>
 
             <div className="flex items-start gap-4 mt-8 pt-8 border-t border-gray-200">
-              <div className="w-16 h-16 bg-[#E31E24] rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-16 h-16 bg-belfrit-red rounded-full flex items-center justify-center flex-shrink-0">
                 <CheckCircle className="w-8 h-8 text-white" />
               </div>
               <div>
@@ -197,7 +197,7 @@ export default function QuiSommesNousPage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3 text-gray-900">
               Nos valeurs
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#FFD700]"></span>
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-belfrit-yellow"></span>
             </h2>
             <p className="text-xl text-gray-900 mt-6">
               4 piliers qui guident notre action quotidienne
@@ -281,7 +281,7 @@ export default function QuiSommesNousPage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3 text-gray-900">
               Notre méthode
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#FFD700]"></span>
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-belfrit-yellow"></span>
             </h2>
             <p className="text-2xl md:text-3xl font-semibold text-gray-900 mt-6 mb-8">
               4 étapes pour un partenariat réussi
@@ -291,16 +291,16 @@ export default function QuiSommesNousPage() {
           <Timeline3D
             events={methodeEvents}
             backgroundColor="bg-transparent"
-            primaryColor="bg-[#E31E24]"
-            secondaryColor="bg-[#FFD700]"
+            primaryColor="bg-belfrit-red"
+            secondaryColor="bg-belfrit-yellow"
             textColor="text-gray-900"
-            accentColor="bg-[#FFD700]"
+            accentColor="bg-belfrit-yellow"
             showImages={true}
             className="!py-12"
           />
 
           <div className="mt-12 text-center max-w-2xl mx-auto">
-            <p className="text-gray-600 italic bg-gray-50 p-4 rounded-lg border-l-4 border-[#FFD700]">
+            <p className="text-gray-600 italic bg-gray-50 p-4 rounded-lg border-l-4 border-belfrit-yellow">
               <strong>Note pratique :</strong> Protocole cuisson 2 bains
               documenté (option premium à la graisse de canard IGP sur friteuse
               dédiée si souhaité).
@@ -315,7 +315,7 @@ export default function QuiSommesNousPage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3 text-gray-900">
               Nos engagements qualité
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#FFD700]"></span>
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-belfrit-yellow"></span>
             </h2>
             <p className="text-xl text-gray-900 mt-6">
               Des garanties concrètes pour votre activité
@@ -410,7 +410,7 @@ export default function QuiSommesNousPage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-block relative pb-3 text-gray-900">
               Notre équipe
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#FFD700]"></span>
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-belfrit-yellow"></span>
             </h2>
             <p className="text-xl text-gray-900 mt-6">
               Des experts dédiés à votre réussite
@@ -421,60 +421,60 @@ export default function QuiSommesNousPage() {
             <ThreeDCard
               title="Direction & Partenariats"
               description="Stratégie, sourcing, relations industrielles"
-              icon={<Building className="w-8 h-8 text-[#E31E24]" />}
+              icon={<Building className="w-8 h-8 text-belfrit-red" />}
               details={[
                 "Gestion partenariats producteurs belges",
                 "Coordination globale des operations",
                 "Stratégie d'approvisionnement et qualité",
                 "Relations industrielles internationales"
               ]}
-              className="bg-white border-2 border-[#FFD700] text-gray-900"
+              className="bg-white border-2 border-belfrit-yellow text-gray-900"
             />
 
             <ThreeDCard
               title="Commerce B2B"
               description="Qualification, propositions, suivi comptes multi-sites"
-              icon={<Users className="w-8 h-8 text-[#E31E24]" />}
+              icon={<Users className="w-8 h-8 text-belfrit-red" />}
               details={[
                 "Qualification des professionnels",
                 "Propositions commerciales personnalisées",
                 "Suivi des comptes multi-sites",
                 "Accompagnement au long terme"
               ]}
-              className="bg-white border-2 border-[#FFD700] text-gray-900"
+              className="bg-white border-2 border-belfrit-yellow text-gray-900"
             />
 
             <ThreeDCard
               title="Qualité & Operations"
               description="Logistique froid, traçabilité, conformité"
-              icon={<Truck className="w-8 h-8 text-[#E31E24]" />}
+              icon={<Truck className="w-8 h-8 text-belfrit-red" />}
               details={[
                 "Gestion de la chaîne du froid",
                 "Traçabilité des lots et DLC",
                 "Conformité aux normes HACCP",
                 "Coordination des livraisons"
               ]}
-              className="bg-white border-2 border-[#FFD700] text-gray-900"
+              className="bg-white border-2 border-belfrit-yellow text-gray-900"
             />
 
             <ThreeDCard
               title="Marketing & PLV"
               description="Identité visuelle, supports PDV et contenus promotionnels"
-              icon={<Palette className="w-8 h-8 text-[#E31E24]" />}
+              icon={<Palette className="w-8 h-8 text-belfrit-red" />}
               details={[
                 "Création de supports PLV personnalisés",
                 "Fiches produits et recettes",
                 "Kits de communication point de vente",
                 "Conseils merchandising et mise en avant"
               ]}
-              className="bg-white border-2 border-[#FFD700] text-gray-900"
+              className="bg-white border-2 border-belfrit-yellow text-gray-900"
             />
           </div>
 
           <div className="text-center mt-12">
             <a
               href="/#contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#E31E24] rounded-lg shadow-lg hover:bg-[#C91A20] transform hover:scale-105 transition-all"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-belfrit-red rounded-lg shadow-lg hover:bg-belfrit-red-dark transform hover:scale-105 transition-all"
             >
               <Phone className="w-5 h-5 mr-2" />
               Être rappelé par un conseiller
@@ -497,8 +497,8 @@ export default function QuiSommesNousPage() {
 
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-12 border border-white/10 text-center">
-              <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-[#FFD700]/20 mb-6 mx-auto">
-                <MessageSquare className="w-12 h-12 text-[#FFD700]" />
+              <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-belfrit-yellow/20 mb-6 mx-auto">
+                <MessageSquare className="w-12 h-12 text-belfrit-yellow" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">
                 Prochainement
@@ -511,15 +511,15 @@ export default function QuiSommesNousPage() {
               </p>
               <div className="flex flex-wrap gap-6 justify-center text-sm text-gray-400">
                 <div className="flex items-center gap-2">
-                  <Star className="w-5 h-5 text-[#FFD700]" />
+                  <Star className="w-5 h-5 text-belfrit-yellow" />
                   <span>Études de cas avant/après</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-[#FFD700]" />
+                  <TrendingUp className="w-5 h-5 text-belfrit-yellow" />
                   <span>Impact sur les ventes</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-[#FFD700]" />
+                  <Users className="w-5 h-5 text-belfrit-yellow" />
                   <span>Satisfaction client</span>
                 </div>
               </div>
@@ -536,7 +536,7 @@ export default function QuiSommesNousPage() {
               Parlons de votre{' '}
               <span className="relative inline-block">
                 <span className="relative z-10">point de vente</span>
-                <span className="absolute bottom-0 left-0 w-full h-3 bg-[#FFD700] -rotate-1 opacity-50"></span>
+                <span className="absolute bottom-0 left-0 w-full h-3 bg-belfrit-yellow -rotate-1 opacity-50"></span>
               </span>
             </h2>
             <p className="text-xl mb-8 text-gray-300">
@@ -547,13 +547,13 @@ export default function QuiSommesNousPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <a
                 href="/#contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-[#E31E24] rounded-lg shadow-lg transform hover:scale-105 transition-transform"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-belfrit-red rounded-lg shadow-lg transform hover:scale-105 transition-transform"
               >
                 Échanger avec un spécialiste
               </a>
               <a
                 href="/#contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-[#FFD700] rounded-lg shadow-lg transform hover:scale-105 transition-transform"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 bg-belfrit-yellow rounded-lg shadow-lg transform hover:scale-105 transition-transform"
               >
                 <FileText className="w-5 h-5 mr-2" />
                 Ouvrir un compte pro

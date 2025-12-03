@@ -95,10 +95,10 @@ export function CertifiedProductsCard() {
           opacity: arrowProgress > 0 ? 1 : 0,
         }}
       >
-        <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+        <svg width="40" height="20" viewBox="0 0 40 20" fill="none" className="text-belfrit-red">
           <path
             d="M0 10 L30 10 L25 5 M30 10 L25 15"
-            stroke="#B91C1C"
+            stroke="currentColor"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"

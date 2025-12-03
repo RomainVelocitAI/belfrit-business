@@ -17,8 +17,8 @@ export default function MentionsLegalesPage() {
               <strong>BelFrit Business</strong><br />
               SIRET : [À compléter]<br />
               Adresse : La Réunion, France<br />
-              Téléphone : <a href="tel:+262693659589" className="text-[#E31E24] hover:underline">+262 693 659 589</a><br />
-              Email : <a href="mailto:info@belfritbusiness.fr" className="text-[#E31E24] hover:underline">info@belfritbusiness.fr</a>
+              Téléphone : <a href="tel:+262693659589" className="text-belfrit-red hover:underline">+262 693 659 589</a><br />
+              Email : <a href="mailto:info@belfritbusiness.fr" className="text-belfrit-red hover:underline">info@belfritbusiness.fr</a>
             </p>
           </section>
 
@@ -60,10 +60,10 @@ export default function MentionsLegalesPage() {
               Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              Pour exercer ces droits, vous pouvez nous contacter à l'adresse : <a href="mailto:info@belfritbusiness.fr" className="text-[#E31E24] hover:underline">info@belfritbusiness.fr</a>
+              Pour exercer ces droits, vous pouvez nous contacter à l'adresse : <a href="mailto:info@belfritbusiness.fr" className="text-belfrit-red hover:underline">info@belfritbusiness.fr</a>
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              Pour plus d'informations, consultez notre <a href="/politique-confidentialite" className="text-[#E31E24] hover:underline font-semibold">Politique de confidentialité</a>.
+              Pour plus d'informations, consultez notre <a href="/politique-confidentialite" className="text-belfrit-red hover:underline font-semibold">Politique de confidentialité</a>.
             </p>
           </section>
 
@@ -103,12 +103,12 @@ export default function MentionsLegalesPage() {
           </section>
 
           {/* Contact */}
-          <section className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#E31E24]">
+          <section className="bg-gray-50 p-6 rounded-lg border-l-4 border-belfrit-red">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Nous contacter</h2>
             <p className="text-gray-700 leading-relaxed">
               Pour toute question concernant ces mentions légales, vous pouvez nous contacter :<br />
-              Email : <a href="mailto:info@belfritbusiness.fr" className="text-[#E31E24] hover:underline font-semibold">info@belfritbusiness.fr</a><br />
-              Téléphone : <a href="tel:+262693659589" className="text-[#E31E24] hover:underline font-semibold">+262 693 659 589</a>
+              Email : <a href="mailto:info@belfritbusiness.fr" className="text-belfrit-red hover:underline font-semibold">info@belfritbusiness.fr</a><br />
+              Téléphone : <a href="tel:+262693659589" className="text-belfrit-red hover:underline font-semibold">+262 693 659 589</a>
             </p>
           </section>
 

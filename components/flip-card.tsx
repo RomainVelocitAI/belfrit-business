@@ -105,7 +105,7 @@ export const FlipCard = React.forwardRef<HTMLDivElement, FlipCardProps>(
                   type="button"
                   size="lg"
                   onClick={handleFlip}
-                  className="bg-[#E31E24] text-white hover:bg-[#E31E24] mx-auto pointer-events-auto cursor-pointer"
+                  className="bg-belfrit-red text-white hover:bg-belfrit-red mx-auto pointer-events-auto cursor-pointer"
                 >
                   {buttonText}
                 </Button>
@@ -151,7 +151,7 @@ export const FlipCard = React.forwardRef<HTMLDivElement, FlipCardProps>(
                   type="button"
                   size="lg"
                   onClick={handleUnflip}
-                  className="bg-[#E31E24] text-white hover:bg-[#E31E24] mx-auto pointer-events-auto cursor-pointer"
+                  className="bg-belfrit-red text-white hover:bg-belfrit-red mx-auto pointer-events-auto cursor-pointer"
                 >
                   Retour
                 </Button>

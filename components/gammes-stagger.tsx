@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { BELGIUM_FLAG_COLORS, BELFRIT_COLORS } from '@/lib/colors';
 
 const SQRT_5000 = Math.sqrt(5000);
 
@@ -65,9 +66,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const isCenter = position === 0;
 
   // Belgian flag colors: black, yellow, red (alternating pattern)
-  const belgiumColors = ['#000000', '#FFD700', '#E31E24'];
+  // Utilise les couleurs centralisées depuis lib/colors.ts
   const colorIndex = product.id % 3; // Utilise l'ID fixe au lieu de tempId
-  const cardColor = belgiumColors[colorIndex];
+  const cardColor = BELGIUM_FLAG_COLORS[colorIndex];
 
   // Determine if we should use light text (for black cards)
   const isBlackCard = colorIndex === 0;
@@ -88,7 +89,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         width: displaySize,
         height: displaySize,
         backgroundColor: cardColor,
-        borderColor: isCenter ? cardColor : 'rgba(209, 213, 219, 0.3)',
+        borderColor: isCenter ? cardColor : `${BELFRIT_COLORS.white}30`,
         clipPath: `polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)`,
         transform: `
           translate(-50%, -50%)
@@ -106,7 +107,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           top: 48,
           width: SQRT_5000,
           height: 2,
-          backgroundColor: isBlackCard ? 'rgba(255, 215, 0, 0.3)' : 'rgba(0, 0, 0, 0.1)'
+          backgroundColor: isBlackCard ? `${BELFRIT_COLORS.yellow}4D` : `${BELFRIT_COLORS.black}1A`
         }}
       />
       <img

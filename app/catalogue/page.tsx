@@ -30,9 +30,9 @@ export default function CataloguePage() {
 
             {/* Icône de maintenance */}
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-[#FFD700] rounded-full flex items-center justify-center">
+              <div className="w-20 h-20 bg-belfrit-yellow rounded-full flex items-center justify-center">
                 <svg
-                  className="w-10 h-10 text-[#E31E24]"
+                  className="w-10 h-10 text-belfrit-red"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -63,7 +63,7 @@ export default function CataloguePage() {
               <div className="space-y-3">
                 <a
                   href="/#contact"
-                  className="block w-full bg-[#E31E24] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#c91a20] transition-colors"
+                  className="block w-full bg-belfrit-red text-white py-3 px-6 rounded-lg font-semibold hover:bg-belfrit-red-dark transition-colors"
                 >
                   Nous contacter
                 </a>
@@ -79,8 +79,8 @@ export default function CataloguePage() {
             {/* Barre de couleurs belges */}
             <div className="flex gap-2 mt-6 pt-6 border-t border-gray-200">
               <div className="flex-1 h-2 bg-black rounded-full"></div>
-              <div className="flex-1 h-2 bg-[#FFD700] rounded-full"></div>
-              <div className="flex-1 h-2 bg-[#E31E24] rounded-full"></div>
+              <div className="flex-1 h-2 bg-belfrit-yellow rounded-full"></div>
+              <div className="flex-1 h-2 bg-belfrit-red rounded-full"></div>
             </div>
           </div>
         </div>

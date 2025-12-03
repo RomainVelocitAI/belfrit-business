@@ -105,7 +105,7 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
               <label htmlFor="companyName" className="block text-sm font-semibold text-gray-700 mb-2">
-                Nom de l'entreprise <span className="text-[#E31E24]">*</span>
+                Nom de l'entreprise <span className="text-belfrit-red">*</span>
               </label>
               <input
                 type="text"
@@ -114,14 +114,14 @@ export default function ContactForm() {
                 value={formData.companyName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E31E24] focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-belfrit-red focus:border-transparent transition-all"
                 placeholder="Votre enseigne"
               />
             </div>
 
             <div>
               <label htmlFor="contactName" className="block text-sm font-semibold text-gray-700 mb-2">
-                Nom du contact <span className="text-[#E31E24]">*</span>
+                Nom du contact <span className="text-belfrit-red">*</span>
               </label>
               <input
                 type="text"
@@ -130,7 +130,7 @@ export default function ContactForm() {
                 value={formData.contactName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E31E24] focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-belfrit-red focus:border-transparent transition-all"
                 placeholder="Nom et prenom"
               />
             </div>
@@ -139,7 +139,7 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
               <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                Email professionnel <span className="text-[#E31E24]">*</span>
+                Email professionnel <span className="text-belfrit-red">*</span>
               </label>
               <input
                 type="email"
@@ -148,14 +148,14 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E31E24] focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-belfrit-red focus:border-transparent transition-all"
                 placeholder="contact@votreentreprise.fr"
               />
             </div>
 
             <div>
               <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                Telephone <span className="text-[#E31E24]">*</span>
+                Telephone <span className="text-belfrit-red">*</span>
               </label>
               <input
                 type="tel"
@@ -164,7 +164,7 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E31E24] focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-belfrit-red focus:border-transparent transition-all"
                 placeholder="06 XX XX XX XX"
               />
             </div>
@@ -172,7 +172,7 @@ export default function ContactForm() {
 
           <div className="mb-6">
             <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
-              Adresse de livraison <span className="text-[#E31E24]">*</span>
+              Adresse de livraison <span className="text-belfrit-red">*</span>
             </label>
             <input
               type="text"
@@ -181,7 +181,7 @@ export default function ContactForm() {
               value={formData.address}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E31E24] focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-belfrit-red focus:border-transparent transition-all"
               placeholder="Adresse complete de votre etablissement"
             />
           </div>
@@ -196,7 +196,7 @@ export default function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E31E24] focus:border-transparent transition-all resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-belfrit-red focus:border-transparent transition-all resize-none"
               placeholder="Dites-nous en plus sur vos besoins..."
             />
           </div>
@@ -204,9 +204,9 @@ export default function ContactForm() {
           {/* Kbis Upload Section */}
           <div className="mb-8">
             <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Kbis de moins de 3 mois <span className="text-[#E31E24]">*</span>
+              Kbis de moins de 3 mois <span className="text-belfrit-red">*</span>
             </label>
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[#E31E24] transition-colors">
+            <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-belfrit-red transition-colors">
               {!kbisFile ? (
                 <div>
                   <div className="mb-4">
@@ -228,7 +228,7 @@ export default function ContactForm() {
                   <div className="flex text-sm text-gray-600 justify-center">
                     <label
                       htmlFor="kbis-upload"
-                      className="relative cursor-pointer bg-white rounded-md font-medium text-[#E31E24] hover:text-red-700 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-[#E31E24]"
+                      className="relative cursor-pointer bg-white rounded-md font-medium text-belfrit-red hover:text-red-700 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-belfrit-red"
                     >
                       <span>Cliquez pour uploader</span>
                       <input
@@ -252,7 +252,7 @@ export default function ContactForm() {
                 <div className="flex items-center justify-between bg-gray-50 p-4 rounded-lg">
                   <div className="flex items-center space-x-3">
                     <svg
-                      className="h-8 w-8 text-[#E31E24]"
+                      className="h-8 w-8 text-belfrit-red"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -274,7 +274,7 @@ export default function ContactForm() {
                   <button
                     type="button"
                     onClick={removeFile}
-                    className="text-[#E31E24] hover:text-red-700 font-medium text-sm"
+                    className="text-belfrit-red hover:text-red-700 font-medium text-sm"
                   >
                     Supprimer
                   </button>
@@ -315,7 +315,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#E31E24] text-white py-4 px-8 rounded-lg font-semibold text-lg shadow-lg hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all transform hover:scale-105 disabled:hover:scale-100"
+            className="w-full bg-belfrit-red text-white py-4 px-8 rounded-lg font-semibold text-lg shadow-lg hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all transform hover:scale-105 disabled:hover:scale-100"
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center">
