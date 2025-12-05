@@ -1,0 +1,120 @@
+import { createServerClient } from '@supabase/ssr'
+import { NextResponse, type NextRequest } from 'next/server'
+
+export async function middleware(request: NextRequest) {
+  let supabaseResponse = NextResponse.next({
+    request,
+  })
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll()
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
+          supabaseResponse = NextResponse.next({
+            request,
+          })
+          cookiesToSet.forEach(({ name, value, options }) =>
+            supabaseResponse.cookies.set(name, value, options)
+          )
+        },
+      },
+    }
+  )
+
+  // Rafraîchir la session si elle existe
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  const { pathname } = request.nextUrl
+
+  // Protection des routes admin
+  if (pathname.startsWith('/admin')) {
+    // Si pas connecté, rediriger vers connexion
+    if (!user) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/connexion'
+      url.searchParams.set('redirect', pathname)
+      return NextResponse.redirect(url)
+    }
+
+    // Vérifier si l'utilisateur est admin
+    const { data: admin } = await supabase
+      .from('admins')
+      .select('id, role, actif')
+      .eq('email', user.email)
+      .single()
+
+    if (!admin || !admin.actif) {
+      // Pas admin ou compte désactivé
+      const url = request.nextUrl.clone()
+      url.pathname = '/connexion'
+      url.searchParams.set('error', 'unauthorized')
+      return NextResponse.redirect(url)
+    }
+  }
+
+  // Protection des routes espace client (/mon-compte, /panier, /commande)
+  if (pathname.startsWith('/mon-compte') || pathname.startsWith('/panier') || pathname.startsWith('/commande')) {
+    if (!user) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/connexion'
+      url.searchParams.set('redirect', pathname)
+      return NextResponse.redirect(url)
+    }
+  }
+
+  // Si connecté et va sur /connexion, rediriger selon le rôle
+  if (pathname === '/connexion' && user) {
+    // Vérifier si admin
+    const { data: admin } = await supabase
+      .from('admins')
+      .select('id, actif')
+      .eq('email', user.email)
+      .single()
+
+    if (admin && admin.actif) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/admin'
+      return NextResponse.redirect(url)
+    }
+
+    // Sinon vérifier si client actif
+    const { data: client } = await supabase
+      .from('clients')
+      .select('id, statut')
+      .eq('email', user.email)
+      .single()
+
+    if (client) {
+      const url = request.nextUrl.clone()
+      if (client.statut === 'actif') {
+        url.pathname = '/mon-compte'
+      } else if (client.statut === 'en_attente') {
+        url.pathname = '/en-attente'
+      } else {
+        // Compte refusé ou suspendu
+        url.pathname = '/'
+      }
+      return NextResponse.redirect(url)
+    }
+  }
+
+  return supabaseResponse
+}
+
+export const config = {
+  matcher: [
+    '/admin/:path*',
+    '/mon-compte/:path*',
+    '/panier/:path*',
+    '/commande/:path*',
+    '/connexion',
+  ],
+}

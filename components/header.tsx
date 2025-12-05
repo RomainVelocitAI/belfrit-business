@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, User } from 'lucide-react';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,6 +49,13 @@ export function Header() {
               className="px-6 py-2 bg-belfrit-red text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
             >
               Devenir partenaire
+            </Link>
+            <Link
+              href="/connexion"
+              className="flex items-center gap-2 px-4 py-2 border-2 border-belfrit-red text-belfrit-red font-semibold rounded-lg hover:bg-belfrit-red hover:text-white transition-colors"
+            >
+              <User className="w-5 h-5" />
+              Espace Pro
             </Link>
           </div>
 
@@ -97,6 +104,14 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Devenir partenaire
+              </Link>
+              <Link
+                href="/connexion"
+                className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-belfrit-red text-belfrit-red font-semibold rounded-lg hover:bg-belfrit-red hover:text-white transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <User className="w-5 h-5" />
+                Espace Pro
               </Link>
             </div>
           </div>
