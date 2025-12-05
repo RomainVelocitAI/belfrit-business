@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "@/components/header";
-import { DevBanner } from "@/components/dev-banner";
-import Footer from "@/components/footer";
+import { LayoutWrapper } from "@/components/layout-wrapper";
 
 export const metadata: Metadata = {
   title: "Frites & snacks belges B2B à La Réunion | BelFrit-Business",
@@ -22,12 +20,9 @@ export default function RootLayout({
   return (
     <html lang="fr" className="scroll-smooth">
       <body className="antialiased">
-        <Header />
-        <DevBanner />
-        <div className="pt-52">
+        <LayoutWrapper>
           {children}
-        </div>
-        <Footer />
+        </LayoutWrapper>
       </body>
     </html>
   );
