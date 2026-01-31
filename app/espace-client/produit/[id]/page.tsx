@@ -29,7 +29,7 @@ export default async function ProduitDetailPage({
     .select(`
       *,
       categories (id, nom),
-      variantes (id, nom, poids, prix_base, disponibilite, ordre),
+      variantes (id, nom, poids, prix_base, disponibilite, ordre, pieces_carton, poids_carton),
       photos_produits (id, photo_url, principale, ordre)
     `)
     .eq('id', id)
@@ -112,12 +112,30 @@ export default async function ProduitDetailPage({
 
         {/* Détails produit */}
         <div className="space-y-6">
-          {/* Catégorie */}
-          {produit.categories && (
-            <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
-              {produit.categories.nom}
-            </span>
-          )}
+          {/* Catégorie et labels */}
+          <div className="flex flex-wrap items-center gap-2">
+            {produit.categories && (
+              <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
+                {produit.categories.nom}
+              </span>
+            )}
+            {produit.labels && produit.labels.map((label: string) => (
+              <span
+                key={label}
+                className={`inline-block px-3 py-1 text-sm font-medium rounded-full ${
+                  label === 'Halal'
+                    ? 'bg-green-500 text-white'
+                    : label === 'Premium'
+                    ? 'bg-amber-400 text-amber-900'
+                    : label === 'Vegan'
+                    ? 'bg-emerald-400 text-white'
+                    : 'bg-gray-500 text-white'
+                }`}
+              >
+                {label}
+              </span>
+            ))}
+          </div>
 
           {/* Nom et description */}
           <div>

@@ -34,7 +34,7 @@ export default async function CataloguePage({
     .select(`
       *,
       categories (id, nom),
-      variantes (id, nom, poids, prix_base, disponibilite, ordre),
+      variantes (id, nom, poids, prix_base, disponibilite, ordre, pieces_carton, poids_carton),
       photos_produits (id, photo_url, principale, ordre)
     `)
     .eq('disponibilite', 'disponible')
@@ -162,6 +162,28 @@ export default async function CataloguePage({
                     <span className="absolute top-2 left-2 px-2 py-1 bg-white/90 text-gray-700 text-xs rounded-full">
                       {produit.categories.nom}
                     </span>
+                  )}
+
+                  {/* Badges labels */}
+                  {produit.labels && produit.labels.length > 0 && (
+                    <div className="absolute top-2 right-2 flex flex-col gap-1">
+                      {produit.labels.map((label: string) => (
+                        <span
+                          key={label}
+                          className={`px-2 py-0.5 text-xs font-medium rounded-full ${
+                            label === 'Halal'
+                              ? 'bg-green-500 text-white'
+                              : label === 'Premium'
+                              ? 'bg-amber-400 text-amber-900'
+                              : label === 'Vegan'
+                              ? 'bg-emerald-400 text-white'
+                              : 'bg-gray-500 text-white'
+                          }`}
+                        >
+                          {label}
+                        </span>
+                      ))}
+                    </div>
                   )}
                 </div>
 

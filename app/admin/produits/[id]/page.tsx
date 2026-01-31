@@ -15,7 +15,7 @@ export default async function ModifierProduitPage({
     .from('produits')
     .select(`
       *,
-      variantes (id, nom, poids, prix_base, disponibilite, ordre),
+      variantes (id, nom, poids, prix_base, disponibilite, ordre, pieces_carton, poids_carton),
       photos_produits (id, photo_url, principale, ordre)
     `)
     .eq('id', id)

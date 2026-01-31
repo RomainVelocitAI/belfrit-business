@@ -12,6 +12,7 @@ import {
   Loader2,
   Package,
   AlertCircle,
+  X,
 } from 'lucide-react'
 import type { Category, Produit, Variante, PhotoProduit, DisponibiliteType } from '@/types/database'
 
@@ -32,6 +33,13 @@ export function ProductForm({ categories, produit, variantes = [], photos = [] }
   const [categorieId, setCategorieId] = useState(produit?.categorie_id || '')
   const [conditionnement, setConditionnement] = useState(produit?.conditionnement || '')
   const [disponibilite, setDisponibilite] = useState<DisponibiliteType>(produit?.disponibilite || 'disponible')
+  const [refBelfrit, setRefBelfrit] = useState(produit?.ref_belfrit || '')
+  const [refFournisseur, setRefFournisseur] = useState(produit?.ref_fournisseur || '')
+  const [fournisseur, setFournisseur] = useState(produit?.fournisseur || '')
+  const [labels, setLabels] = useState<string[]>(produit?.labels || [])
+  const [newLabel, setNewLabel] = useState('')
+
+  const LABELS_SUGGESTIONS = ['Halal', 'Premium', 'Vegan']
 
   // État des variantes et photos
   const [localVariantes, setLocalVariantes] = useState<Partial<Variante>[]>(
@@ -84,6 +92,10 @@ export function ProductForm({ categories, produit, variantes = [], photos = [] }
             categorie_id: categorieId,
             conditionnement: conditionnement || null,
             disponibilite,
+            ref_belfrit: refBelfrit || null,
+            ref_fournisseur: refFournisseur || null,
+            fournisseur: fournisseur || null,
+            labels: labels.length > 0 ? labels : null,
             updated_at: new Date().toISOString(),
           })
           .eq('id', produitId)
@@ -98,6 +110,10 @@ export function ProductForm({ categories, produit, variantes = [], photos = [] }
             categorie_id: categorieId,
             conditionnement: conditionnement || null,
             disponibilite,
+            ref_belfrit: refBelfrit || null,
+            ref_fournisseur: refFournisseur || null,
+            fournisseur: fournisseur || null,
+            labels: labels.length > 0 ? labels : null,
           })
           .select()
           .single()
@@ -127,6 +143,8 @@ export function ProductForm({ categories, produit, variantes = [], photos = [] }
           prix_base: variante.prix_base || 0,
           disponibilite: variante.disponibilite || 'disponible',
           ordre: i + 1,
+          pieces_carton: variante.pieces_carton ?? null,
+          poids_carton: variante.poids_carton ?? null,
         }
 
         if (variante.id) {
@@ -319,6 +337,95 @@ export function ProductForm({ categories, produit, variantes = [], photos = [] }
                     </option>
                   ))}
                 </select>
+              </div>
+
+              {/* Références */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="ref_belfrit" className="block text-sm font-medium text-gray-700 mb-2">
+                    Référence BelFrit
+                  </label>
+                  <input
+                    id="ref_belfrit"
+                    type="text"
+                    value={refBelfrit}
+                    onChange={(e) => setRefBelfrit(e.target.value)}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-belfrit-red focus:border-transparent"
+                    placeholder="Ex: BF-001"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="ref_fournisseur" className="block text-sm font-medium text-gray-700 mb-2">
+                    Référence fournisseur
+                  </label>
+                  <input
+                    id="ref_fournisseur"
+                    type="text"
+                    value={refFournisseur}
+                    onChange={(e) => setRefFournisseur(e.target.value)}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-belfrit-red focus:border-transparent"
+                    placeholder="Ex: P0000282"
+                  />
+                </div>
+              </div>
+
+              {/* Fournisseur */}
+              <div>
+                <label htmlFor="fournisseur" className="block text-sm font-medium text-gray-700 mb-2">
+                  Fournisseur
+                </label>
+                <input
+                  id="fournisseur"
+                  type="text"
+                  value={fournisseur}
+                  onChange={(e) => setFournisseur(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-belfrit-red focus:border-transparent"
+                  placeholder="Ex: Vanreusel, Oma Bobs"
+                />
+              </div>
+
+              {/* Labels */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Labels
+                </label>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {labels.map((label) => (
+                    <span
+                      key={label}
+                      className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium ${
+                        label === 'Halal'
+                          ? 'bg-green-100 text-green-800'
+                          : label === 'Premium'
+                          ? 'bg-amber-100 text-amber-800'
+                          : label === 'Vegan'
+                          ? 'bg-emerald-50 text-emerald-700'
+                          : 'bg-gray-100 text-gray-700'
+                      }`}
+                    >
+                      {label}
+                      <button
+                        type="button"
+                        onClick={() => setLabels(labels.filter((l) => l !== label))}
+                        className="ml-1 hover:opacity-70"
+                      >
+                        <X className="w-3 h-3" />
+                      </button>
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-2">
+                  {LABELS_SUGGESTIONS.filter((s) => !labels.includes(s)).map((suggestion) => (
+                    <button
+                      key={suggestion}
+                      type="button"
+                      onClick={() => setLabels([...labels, suggestion])}
+                      className="px-3 py-1 border border-dashed border-gray-300 rounded-full text-sm text-gray-500 hover:border-gray-400 hover:text-gray-700 transition-colors"
+                    >
+                      + {suggestion}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* Conditionnement général */}

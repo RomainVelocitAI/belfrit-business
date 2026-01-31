@@ -18,6 +18,8 @@ export function VariantesManager({ variantes, onChange }: VariantesManagerProps)
         prix_base: 0,
         disponibilite: 'disponible' as DisponibiliteType,
         ordre: variantes.length + 1,
+        pieces_carton: null,
+        poids_carton: null,
       },
     ])
   }
@@ -83,13 +85,15 @@ export function VariantesManager({ variantes, onChange }: VariantesManagerProps)
       ) : (
         <div className="space-y-3">
           {/* En-têtes */}
-          <div className="hidden md:grid md:grid-cols-12 gap-4 px-4 text-sm font-medium text-gray-500">
-            <div className="col-span-1"></div>
-            <div className="col-span-3">Nom *</div>
-            <div className="col-span-2">Poids</div>
-            <div className="col-span-2">Prix HT *</div>
-            <div className="col-span-3">Disponibilité</div>
-            <div className="col-span-1"></div>
+          <div className="hidden md:grid md:grid-cols-16 gap-3 px-4 text-sm font-medium text-gray-500" style={{ gridTemplateColumns: 'auto 3fr 1.5fr 1.5fr 1fr 1fr 2.5fr auto' }}>
+            <div></div>
+            <div>Nom *</div>
+            <div>Poids</div>
+            <div>Prix HT *</div>
+            <div>Pcs/carton</div>
+            <div>Kg/carton</div>
+            <div>Disponibilité</div>
+            <div></div>
           </div>
 
           {/* Liste des variantes */}
@@ -98,9 +102,9 @@ export function VariantesManager({ variantes, onChange }: VariantesManagerProps)
               key={variante.id || `new-${index}`}
               className="bg-gray-50 rounded-lg p-4 border border-gray-200"
             >
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-none gap-3 items-center" style={{ gridTemplateColumns: 'auto 3fr 1.5fr 1.5fr 1fr 1fr 2.5fr auto' }}>
                 {/* Grip pour réordonner */}
-                <div className="hidden md:flex col-span-1 justify-center">
+                <div className="hidden md:flex justify-center">
                   <div className="flex flex-col gap-1">
                     <button
                       type="button"
@@ -122,7 +126,7 @@ export function VariantesManager({ variantes, onChange }: VariantesManagerProps)
                 </div>
 
                 {/* Nom */}
-                <div className="md:col-span-3">
+                <div>
                   <label className="md:hidden text-sm font-medium text-gray-700 mb-1 block">
                     Nom *
                   </label>
@@ -137,7 +141,7 @@ export function VariantesManager({ variantes, onChange }: VariantesManagerProps)
                 </div>
 
                 {/* Poids */}
-                <div className="md:col-span-2">
+                <div>
                   <label className="md:hidden text-sm font-medium text-gray-700 mb-1 block">
                     Poids
                   </label>
@@ -151,7 +155,7 @@ export function VariantesManager({ variantes, onChange }: VariantesManagerProps)
                 </div>
 
                 {/* Prix */}
-                <div className="md:col-span-2">
+                <div>
                   <label className="md:hidden text-sm font-medium text-gray-700 mb-1 block">
                     Prix HT *
                   </label>
@@ -170,8 +174,39 @@ export function VariantesManager({ variantes, onChange }: VariantesManagerProps)
                   </div>
                 </div>
 
+                {/* Pièces par carton */}
+                <div>
+                  <label className="md:hidden text-sm font-medium text-gray-700 mb-1 block">
+                    Pcs/carton
+                  </label>
+                  <input
+                    type="number"
+                    min="0"
+                    value={variante.pieces_carton ?? ''}
+                    onChange={(e) => updateVariante(index, 'pieces_carton', e.target.value ? parseInt(e.target.value) : null)}
+                    placeholder="-"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-belfrit-red focus:border-transparent"
+                  />
+                </div>
+
+                {/* Poids carton */}
+                <div>
+                  <label className="md:hidden text-sm font-medium text-gray-700 mb-1 block">
+                    Kg/carton
+                  </label>
+                  <input
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={variante.poids_carton ?? ''}
+                    onChange={(e) => updateVariante(index, 'poids_carton', e.target.value ? parseFloat(e.target.value) : null)}
+                    placeholder="-"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-belfrit-red focus:border-transparent"
+                  />
+                </div>
+
                 {/* Disponibilité */}
-                <div className="md:col-span-3">
+                <div>
                   <label className="md:hidden text-sm font-medium text-gray-700 mb-1 block">
                     Disponibilité
                   </label>
@@ -187,7 +222,7 @@ export function VariantesManager({ variantes, onChange }: VariantesManagerProps)
                 </div>
 
                 {/* Supprimer */}
-                <div className="md:col-span-1 flex justify-end">
+                <div className="flex justify-end">
                   <button
                     type="button"
                     onClick={() => removeVariante(index)}

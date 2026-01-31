@@ -1,7 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Plus, Search, Filter, Package, Pencil } from 'lucide-react'
+import { Plus, Search, Filter, Package, Pencil, Tag } from 'lucide-react'
 import { DeleteProductButton } from '@/components/admin/delete-product-button'
 import { DisponibiliteToggle } from '@/components/admin/disponibilite-toggle'
 
@@ -25,7 +25,7 @@ export default async function ProduitsPage({
     .select(`
       *,
       categories (id, nom),
-      variantes (id, nom, poids, prix_base, disponibilite, ordre),
+      variantes (id, nom, poids, prix_base, disponibilite, ordre, pieces_carton, poids_carton),
       photos_produits (id, photo_url, principale, ordre)
     `)
     .order('created_at', { ascending: false })
@@ -129,7 +129,13 @@ export default async function ProduitsPage({
                     Produit
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Réf / Fournisseur
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Catégorie
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Labels
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Variantes
@@ -182,9 +188,46 @@ export default async function ProduitsPage({
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm">
+                          {produit.ref_belfrit && (
+                            <p className="font-mono text-gray-900">{produit.ref_belfrit}</p>
+                          )}
+                          {produit.fournisseur && (
+                            <p className="text-gray-500">{produit.fournisseur}</p>
+                          )}
+                          {!produit.ref_belfrit && !produit.fournisseur && (
+                            <span className="text-gray-400">-</span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
                         <span className="text-sm text-gray-600">
                           {produit.categories?.nom || '-'}
                         </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="flex flex-wrap gap-1">
+                          {produit.labels && produit.labels.length > 0 ? (
+                            produit.labels.map((label: string) => (
+                              <span
+                                key={label}
+                                className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
+                                  label === 'Halal'
+                                    ? 'bg-green-100 text-green-800'
+                                    : label === 'Premium'
+                                    ? 'bg-amber-100 text-amber-800'
+                                    : label === 'Vegan'
+                                    ? 'bg-emerald-50 text-emerald-700'
+                                    : 'bg-gray-100 text-gray-700'
+                                }`}
+                              >
+                                {label}
+                              </span>
+                            ))
+                          ) : (
+                            <span className="text-sm text-gray-400">-</span>
+                          )}
+                        </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className="text-sm text-gray-600">

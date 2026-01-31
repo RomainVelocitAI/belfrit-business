@@ -60,6 +60,10 @@ export interface Produit {
   categorie_id: string
   conditionnement: string | null
   disponibilite: DisponibiliteType
+  ref_belfrit: string | null
+  ref_fournisseur: string | null
+  fournisseur: string | null
+  labels: string[] | null
   created_at: string
   updated_at: string
 }
@@ -72,6 +76,8 @@ export interface Variante {
   prix_base: number
   disponibilite: DisponibiliteType
   ordre: number
+  pieces_carton: number | null
+  poids_carton: number | null
   created_at: string
 }
 
