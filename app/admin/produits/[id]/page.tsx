@@ -10,13 +10,14 @@ export default async function ModifierProduitPage({
   const { id } = await params
   const supabase = await createClient()
 
-  // Récupérer le produit avec ses variantes et photos
+  // Récupérer le produit avec ses variantes, photos et valeurs nutritionnelles
   const { data: produit, error } = await supabase
     .from('produits')
     .select(`
       *,
       variantes (id, nom, poids, prix_base, disponibilite, ordre, pieces_carton, poids_carton),
-      photos_produits (id, photo_url, principale, ordre)
+      photos_produits (id, photo_url, principale, ordre),
+      valeurs_nutritionnelles (*)
     `)
     .eq('id', id)
     .single()
@@ -43,6 +44,7 @@ export default async function ModifierProduitPage({
         produit={produit}
         variantes={produit.variantes || []}
         photos={produit.photos_produits || []}
+        valeursNutritionnelles={produit.valeurs_nutritionnelles || undefined}
       />
     </div>
   )

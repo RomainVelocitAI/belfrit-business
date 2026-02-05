@@ -195,7 +195,10 @@ export default async function ProduitsPage({
                           {produit.fournisseur && (
                             <p className="text-gray-500">{produit.fournisseur}</p>
                           )}
-                          {!produit.ref_belfrit && !produit.fournisseur && (
+                          {produit.ean && (
+                            <p className="text-xs text-gray-400 font-mono">EAN: {produit.ean}</p>
+                          )}
+                          {!produit.ref_belfrit && !produit.fournisseur && !produit.ean && (
                             <span className="text-gray-400">-</span>
                           )}
                         </div>

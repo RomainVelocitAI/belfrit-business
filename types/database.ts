@@ -21,6 +21,16 @@ export type RoleAdmin = 'admin' | 'logistique' | 'commercial'
 export type TypeStructure = 'restaurant' | 'snack' | 'hotel' | 'commerce'
 
 // ============================================================
+// TYPES JSONB
+// ============================================================
+
+export interface Allergenes {
+  contient: string[]
+  peut_contenir: string[]
+  sans: string[]
+}
+
+// ============================================================
 // TABLES
 // ============================================================
 
@@ -64,6 +74,13 @@ export interface Produit {
   ref_fournisseur: string | null
   fournisseur: string | null
   labels: string[] | null
+  ean: string | null
+  pays_origine: string | null
+  nom_legal: string | null
+  ingredients: string | null
+  allergenes: Allergenes | null
+  preparation: string | null
+  conservation: string | null
   created_at: string
   updated_at: string
 }
@@ -88,6 +105,20 @@ export interface PhotoProduit {
   principale: boolean
   ordre: number
   created_at: string
+}
+
+export interface ValeursNutritionnelles {
+  id: string
+  produit_id: string
+  energie_kj: number | null
+  energie_kcal: number | null
+  matieres_grasses: number | null
+  acides_gras_satures: number | null
+  glucides: number | null
+  sucres: number | null
+  proteines: number | null
+  sel: number | null
+  fibres: number | null
 }
 
 export interface Client {
@@ -149,6 +180,7 @@ export interface ProduitAvecDetails extends Produit {
   categorie?: Category
   variantes?: Variante[]
   photos?: PhotoProduit[]
+  valeurs_nutritionnelles?: ValeursNutritionnelles
 }
 
 export interface CommandeAvecDetails extends Commande {
@@ -187,6 +219,9 @@ export type VarianteUpdate = Partial<VarianteInsert>
 
 export type PhotoProduitInsert = Omit<PhotoProduit, 'id' | 'created_at'>
 export type PhotoProduitUpdate = Partial<PhotoProduitInsert>
+
+export type ValeursNutritionnellesInsert = Omit<ValeursNutritionnelles, 'id'>
+export type ValeursNutritionnellesUpdate = Partial<ValeursNutritionnellesInsert>
 
 export type ClientInsert = Omit<Client, 'id' | 'created_at' | 'updated_at'>
 export type ClientUpdate = Partial<ClientInsert>
@@ -232,6 +267,11 @@ export interface Database {
         Row: PhotoProduit
         Insert: PhotoProduitInsert & { id?: string; created_at?: string }
         Update: PhotoProduitUpdate & { id?: string; created_at?: string }
+      }
+      valeurs_nutritionnelles: {
+        Row: ValeursNutritionnelles
+        Insert: ValeursNutritionnellesInsert & { id?: string }
+        Update: ValeursNutritionnellesUpdate & { id?: string }
       }
       clients: {
         Row: Client
